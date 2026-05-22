@@ -3,99 +3,491 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Prestige Auto KR | Luxury & Supercar Specialists</title>
+<title>Prestige Auto KR | Luxury & Everyday Cars</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-:root{--gold:#C9A84C;--black:#0A0A0A;--white:#FAFAF8;--gray:#F5F4F0;--muted:#888;--dark-bg:#111}
-body{font-family:'Segoe UI',Arial,sans-serif;background:var(--white);color:var(--black)}
-a{text-decoration:none;color:inherit}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 3rem;background:rgba(250,250,248,0.97);border-bottom:1px solid rgba(201,168,76,0.2)}
-.logo{font-size:1.5rem;font-weight:700;letter-spacing:0.15em}
-.logo span{color:var(--gold)}
-.nav-links{display:flex;gap:2rem;list-style:none}
-.nav-links a{font-size:0.9rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:600;color:black;transition:color 0.3s}
-.nav-links a:hover{color:var(--gold)}
-.nav-right{display:flex;align-items:center;gap:0.8rem}
-.nav-cta{font-size:0.8rem;letter-spacing:0.12em;text-transform:uppercase;padding:0.7rem 1.6rem;background:var(--black);color:white;font-weight:600;cursor:pointer;border:none;transition:background 0.3s}
-.nav-cta:hover{background:var(--gold)}
-.hero{min-height:60vh;display:grid;grid-template-columns:1fr 1fr;margin-top:70px;background:linear-gradient(135deg,#1a1a1a,#2a2a2a)}
-.hero-left{padding:4rem 3rem;display:flex;flex-direction:column;justify-content:center}
-.hero-title{font-size:3.5rem;font-weight:300;line-height:1.1;margin-bottom:1rem;color:white}
-.hero-title em{font-style:italic;color:var(--gold)}
-.hero-desc{font-size:1rem;color:#aaa;max-width:450px;margin-bottom:1.5rem}
-.hero-badge{display:inline-block;background:var(--gold);color:black;padding:0.5rem 1.2rem;font-size:0.8rem;font-weight:600;border-radius:30px;width:fit-content}
-.hero-right{display:flex;align-items:center;justify-content:center}
-.hero-right i{font-size:8rem;color:rgba(201,168,76,0.3)}
-.section{padding:3rem}
-.sec-tag{font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem}
-.sec-title{font-size:2rem;font-weight:300;color:black;margin-bottom:1.5rem}
-.filter-bar{background:var(--gray);padding:1.5rem;margin-bottom:2rem;display:flex;flex-wrap:wrap;gap:1rem;align-items:flex-end}
-.filter-group{display:flex;flex-direction:column}
-.filter-group label{font-size:0.65rem;text-transform:uppercase;color:var(--muted);margin-bottom:0.3rem}
-.filter-group input,.filter-group select{padding:0.5rem;border:1px solid rgba(0,0,0,0.1);background:white;font-size:0.85rem;min-width:130px}
-.filter-btn{padding:0.5rem 1.5rem;background:var(--black);color:white;border:none;cursor:pointer;font-size:0.8rem;transition:background 0.3s}
-.filter-btn:hover{background:var(--gold)}
-.filter-btn.reset{background:#888}
-.filter-btn.reset:hover{background:#666}
-.cars-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:1.5rem}
-.car-card{background:white;border:1px solid rgba(0,0,0,0.08);transition:transform 0.3s,box-shadow 0.3s;cursor:pointer}
-.car-card:hover{transform:translateY(-5px);box-shadow:0 10px 25px rgba(0,0,0,0.1)}
-.car-img{width:100%;height:200px;background:linear-gradient(145deg,#1e1e1e,#0d0d0d);display:flex;align-items:center;justify-content:center;color:#c9a56b;font-size:3rem}
-.car-body{padding:1.2rem}
-.car-brand{font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);font-weight:600}
-.car-name{font-size:1.2rem;font-weight:600;margin:0.3rem 0;color:black}
-.car-meta{font-size:0.75rem;color:var(--muted);margin:0.2rem 0}
-.car-price{font-size:1.2rem;font-weight:700;color:var(--black);margin-top:0.5rem}
-.car-badge{display:inline-block;font-size:0.65rem;padding:0.2rem 0.5rem;background:rgba(201,168,76,0.15);color:var(--gold);margin-top:0.5rem}
-.stats-bar{background:white;padding:1rem 1.5rem;margin-bottom:1.5rem;border:1px solid rgba(0,0,0,0.05);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
-.stats-count{font-size:0.8rem;color:var(--muted)}
-.stats-count span{font-weight:700;color:var(--gold)}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-/* ENCAR SECTION (kichikroq, yordamchi) */
-.encar-section{background:var(--dark-bg);color:white;padding:2rem 3rem;margin:1rem 3rem 2rem 3rem;border-radius:24px}
-.encar-header{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;margin-bottom:1.5rem}
-.encar-title{font-size:1.2rem;font-weight:500}
-.encar-title i{color:var(--gold);margin-right:0.5rem}
-.encar-help{background:rgba(201,168,76,0.2);padding:0.8rem 1.2rem;border-radius:12px;font-size:0.85rem}
-.encar-help strong{color:var(--gold)}
-.encar-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem}
-.encar-card{background:#1a1a1a;border-radius:16px;padding:1rem;transition:0.2s}
-.encar-card:hover{background:#222;border-left:3px solid var(--gold)}
-.encar-card .car-name{color:white}
-.encar-card .car-price{color:var(--gold)}
-.encar-badge{font-size:0.7rem;color:#aaa}
-.encar-note{text-align:center;margin-top:1.5rem;font-size:0.75rem;color:#666}
-.encar-note i{color:var(--gold)}
-.pagination{display:flex;justify-content:center;gap:0.5rem;margin-top:2rem;flex-wrap:wrap}
-.pagination button{padding:0.5rem 1rem;background:white;border:1px solid rgba(0,0,0,0.1);cursor:pointer;transition:all 0.3s}
-.pagination button:hover{background:var(--gold);color:white;border-color:var(--gold)}
-.pagination button.active{background:var(--gold);color:white;border-color:var(--gold)}
-footer{background:var(--black);color:white;padding:3rem}
-.foot-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
-.foot-socials{display:flex;gap:1.5rem}
-.foot-socials a{color:rgba(255,255,255,0.4);transition:color 0.3s}
-.foot-socials a:hover{color:var(--gold)}
-.foot-socials i{margin-right:0.3rem}
-@media (max-width:768px){
-    nav{padding:1rem}
-    .hero{grid-template-columns:1fr;margin-top:60px}
-    .hero-left{padding:2rem}
-    .hero-title{font-size:2rem}
-    .section{padding:1.5rem}
-    .encar-section{margin:1rem;padding:1.5rem}
-    .filter-bar{flex-direction:column;align-items:stretch}
+:root {
+    --gold: #C9A84C;
+    --black: #0A0A0A;
+    --white: #FAFAF8;
+    --gray: #F5F4F0;
+    --muted: #888;
+    --dark: #1a1a1a;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: var(--white);
+    color: var(--black);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Navbar */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 3rem;
+    background: rgba(250, 250, 248, 0.98);
+    border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+    backdrop-filter: blur(5px);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+}
+
+.logo span {
+    color: var(--gold);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links a {
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: black;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--gold);
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.nav-cta {
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.7rem 1.6rem;
+    background: var(--black);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: background 0.3s;
+}
+
+.nav-cta:hover {
+    background: var(--gold);
+}
+
+/* Hero with nostalgic Rolls-Royce */
+.hero {
+    min-height: 80vh;
+    margin-top: 70px;
+    position: relative;
+    background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 100%), url('https://images.unsplash.com/photo-1631295868223-63228b40f9e4?q=80&w=2070&auto=format');
+    background-size: cover;
+    background-position: center 25%;
+    display: flex;
+    align-items: center;
+    padding: 4rem 5rem;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 150px;
+    background: linear-gradient(to top, var(--white), transparent);
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 650px;
+}
+
+.hero-title {
+    font-size: 4rem;
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.hero-title em {
+    font-style: italic;
+    color: var(--gold);
+}
+
+.hero-desc {
+    font-size: 1rem;
+    color: #ddd;
+    max-width: 500px;
+    margin-bottom: 1.8rem;
+    line-height: 1.6;
+}
+
+.hero-badge {
+    display: inline-block;
+    background: var(--gold);
+    color: black;
+    padding: 0.6rem 1.5rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border-radius: 40px;
+}
+
+.hero-badge i {
+    margin-right: 0.5rem;
+}
+
+/* Section styles */
+.section {
+    padding: 3rem 4rem;
+}
+
+.sec-tag {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+}
+
+.sec-title {
+    font-size: 2rem;
+    font-weight: 300;
+    color: black;
+    margin-bottom: 1.8rem;
+}
+
+/* Category tabs */
+.category-tabs {
+    display: flex;
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 1rem;
+}
+
+.cat-btn {
+    background: none;
+    border: none;
+    padding: 0.6rem 1.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 40px;
+    transition: all 0.3s;
+    color: var(--muted);
+}
+
+.cat-btn:hover {
+    background: rgba(201, 168, 76, 0.1);
+    color: var(--gold);
+}
+
+.cat-btn.active {
+    background: var(--gold);
+    color: black;
+}
+
+/* Filter bar */
+.filter-bar {
+    background: var(--gray);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: flex-end;
+    border-radius: 16px;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-group label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.3rem;
+}
+
+.filter-group input, .filter-group select {
+    padding: 0.5rem;
+    border: 1px solid rgba(0,0,0,0.1);
+    background: white;
+    font-size: 0.85rem;
+    min-width: 130px;
+    border-radius: 8px;
+}
+
+.filter-btn {
+    padding: 0.5rem 1.5rem;
+    background: var(--black);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 0.8rem;
+    border-radius: 8px;
+    transition: background 0.3s;
+}
+
+.filter-btn:hover {
+    background: var(--gold);
+}
+
+.filter-btn.reset {
+    background: #aaa;
+}
+
+.filter-btn.reset:hover {
+    background: #777;
+}
+
+/* Stats bar */
+.stats-bar {
+    background: white;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(0,0,0,0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    border-radius: 12px;
+}
+
+.stats-count {
+    font-size: 0.8rem;
+    color: var(--muted);
+}
+
+.stats-count span {
+    font-weight: 700;
+    color: var(--gold);
+}
+
+/* Cars grid */
+.cars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.8rem;
+}
+
+.car-card {
+    background: white;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.car-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.car-img {
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    font-size: 3rem;
+}
+
+.car-body {
+    padding: 1.2rem 1.3rem 1.5rem;
+}
+
+.car-brand {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+}
+
+.car-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0.4rem 0;
+    color: black;
+}
+
+.car-meta {
+    font-size: 0.75rem;
+    color: var(--muted);
+    margin: 0.3rem 0;
+}
+
+.car-price {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--black);
+    margin-top: 0.6rem;
+}
+
+.car-badge {
+    display: inline-block;
+    font-size: 0.65rem;
+    padding: 0.2rem 0.6rem;
+    background: rgba(201, 168, 76, 0.12);
+    color: var(--gold);
+    margin-top: 0.5rem;
+    border-radius: 20px;
+}
+
+/* Encar section (small, as reference only) */
+.encar-ref {
+    background: linear-gradient(135deg, #f8f8f8, #efefef);
+    margin: 1rem 4rem 2rem 4rem;
+    padding: 1.5rem 2rem;
+    border-radius: 20px;
+    border: 1px solid #e0e0e0;
+}
+
+.encar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.encar-title {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #555;
+}
+
+.encar-title i {
+    color: var(--gold);
+    margin-right: 0.5rem;
+}
+
+.encar-note {
+    font-size: 0.75rem;
+    color: #888;
+}
+
+.encar-note strong {
+    color: var(--gold);
+}
+
+.encar-logos {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    font-size: 0.7rem;
+    color: #999;
+}
+
+/* Footer */
+footer {
+    background: var(--black);
+    color: white;
+    padding: 2.5rem 4rem;
+    margin-top: 2rem;
+}
+
+.foot-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.foot-socials {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.foot-socials a {
+    color: rgba(255,255,255,0.4);
+    transition: color 0.3s;
+}
+
+.foot-socials a:hover {
+    color: var(--gold);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    nav {
+        padding: 0.8rem 1rem;
+    }
+    .nav-links {
+        display: none;
+    }
+    .hero {
+        padding: 2rem;
+        min-height: 60vh;
+    }
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    .section {
+        padding: 1.5rem;
+    }
+    .encar-ref {
+        margin: 1rem;
+        padding: 1rem;
+    }
+    footer {
+        padding: 1.5rem;
+    }
+    .filter-bar {
+        flex-direction: column;
+        align-items: stretch;
+    }
 }
 </style>
 </head>
 <body>
+
 <nav>
 <div class="logo">PRESTIGE <span>AUTO</span> KR</div>
 <ul class="nav-links">
-<li><a href="#luxury">Luxury</a></li>
-<li><a href="#premium">Premium</a></li>
-<li><a href="#supercars">Supercars</a></li>
-<li><a href="#encar">Encar+</a></li>
+<li><a href="#" data-cat="all">All</a></li>
+<li><a href="#" data-cat="Luxury">Luxury</a></li>
+<li><a href="#" data-cat="Premium">Premium</a></li>
+<li><a href="#" data-cat="Supercar">Supercars</a></li>
+<li><a href="#" data-cat="Everyday">Everyday</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
 <div class="nav-right">
@@ -103,120 +495,93 @@ footer{background:var(--black);color:white;padding:3rem}
 </div>
 </nav>
 
+<!-- Hero with nostalgic Rolls-Royce -->
 <section class="hero">
-<div class="hero-left">
-<h1 class="hero-title">Luxury &<br>Supercar<br><em>Specialists</em></h1>
-<p class="hero-desc">Korea's premier destination for high-end vehicles. Exclusive collection of premium, luxury and supercars — personally inspected and ready for export.</p>
-<div class="hero-badge"><i class="fas fa-gem"></i> Trusted by collectors worldwide</div>
-</div>
-<div class="hero-right">
-<i class="fas fa-crown"></i>
+<div class="hero-content">
+<h1 class="hero-title">Luxury &<br><em>Everyday</em> Excellence</h1>
+<p class="hero-desc">Brand new, luxury, premium, supercars and affordable daily drivers. Personally inspected and ready for worldwide delivery.</p>
+<div class="hero-badge"><i class="fas fa-shield-alt"></i> Trusted by collectors & families</div>
 </div>
 </section>
 
-<!-- ASOSIY QISM: Luxury, Premium, Supercars (Encarsiz) -->
-<section id="luxury" class="section">
-<div class="sec-tag"><i class="fas fa-gem"></i> Handpicked Collection</div>
-<h2 class="sec-title">Luxury & Premium Vehicles</h2>
+<!-- Main Inventory Section -->
+<section id="inventory" class="section">
+<div class="sec-tag"><i class="fas fa-gem"></i> Our Collection</div>
+<h2 class="sec-title">Vehicles For Every Need</h2>
 
+<!-- Category Tabs -->
+<div class="category-tabs">
+<button class="cat-btn active" data-cat="all">All Vehicles</button>
+<button class="cat-btn" data-cat="Luxury"><i class="fas fa-crown"></i> Luxury</button>
+<button class="cat-btn" data-cat="Premium"><i class="fas fa-star"></i> Premium</button>
+<button class="cat-btn" data-cat="Supercar"><i class="fas fa-rocket"></i> Supercars</button>
+<button class="cat-btn" data-cat="Everyday"><i class="fas fa-car"></i> Everyday</button>
+</div>
+
+<!-- Filters -->
 <div class="filter-bar">
 <div class="filter-group">
-<label><i class="fas fa-trademark"></i> Brand</label>
+<label>Brand</label>
 <select id="brandFilter">
 <option value="all">All Brands</option>
 <option value="Mercedes-Benz">Mercedes-Benz</option>
 <option value="BMW">BMW</option>
 <option value="Lexus">Lexus</option>
 <option value="Porsche">Porsche</option>
-<option value="Bentley">Bentley</option>
-<option value="Rolls-Royce">Rolls-Royce</option>
+<option value="Ferrari">Ferrari</option>
+<option value="Lamborghini">Lamborghini</option>
+<option value="Hyundai">Hyundai</option>
+<option value="Kia">Kia</option>
+<option value="Toyota">Toyota</option>
 </select>
 </div>
 <div class="filter-group">
-<label><i class="fas fa-calendar"></i> Min Year</label>
-<input type="number" id="yearFrom" value="2020" placeholder="2020">
+<label>Min Year</label>
+<input type="number" id="yearFrom" value="2020">
 </div>
 <div class="filter-group">
-<label><i class="fas fa-calendar"></i> Max Year</label>
-<input type="number" id="yearTo" value="2025" placeholder="2025">
+<label>Max Year</label>
+<input type="number" id="yearTo" value="2025">
 </div>
 <div class="filter-group">
-<label><i class="fas fa-won-sign"></i> Max Price (KRW)</label>
-<input type="number" id="priceTo" value="1000000000" placeholder="Max price">
-</div>
-<div class="filter-group">
-<label><i class="fas fa-car"></i> Category</label>
-<select id="categoryFilter">
-<option value="all">All</option>
-<option value="Luxury">Luxury</option>
-<option value="Premium">Premium</option>
-<option value="Supercar">Supercar</option>
-</select>
+<label>Max Price (KRW)</label>
+<input type="number" id="priceTo" value="900000000">
 </div>
 <button class="filter-btn" onclick="applyFilters()"><i class="fas fa-search"></i> Search</button>
 <button class="filter-btn reset" onclick="resetFilters()"><i class="fas fa-undo"></i> Reset</button>
 </div>
 
 <div class="stats-bar">
-<div class="stats-count"><i class="fas fa-chart-line"></i> Showing <span id="carCount">0</span> exclusive vehicles</div>
-<div class="stats-count"><i class="fas fa-shield-alt"></i> 100% inspected · No accident</div>
+<div class="stats-count"><i class="fas fa-chart-line"></i> Showing <span id="carCount">0</span> vehicles</div>
+<div class="stats-count"><i class="fas fa-check-circle"></i> 100% inspected · Ready to ship</div>
 </div>
 
 <div id="carsContainer" class="cars-grid"></div>
 </section>
 
-<!-- SUPERCARS alohida -->
-<section id="supercars" class="section" style="background:var(--gray)">
-<div class="sec-tag"><i class="fas fa-rocket"></i> Extreme Performance</div>
-<h2 class="sec-title">Supercars & Hypercars</h2>
-<div id="supercarsContainer" class="cars-grid"></div>
-</section>
-
-<!-- ENCAR QISMI (yordamchi, kichik) -->
-<section id="encar" class="encar-section">
+<!-- Encar as reference only (sensor/censored source) -->
+<div class="encar-ref">
 <div class="encar-header">
-<div class="encar-title"><i class="fas fa-database"></i> Encar.com · Secondary Market Access</div>
-<div class="encar-help"><i class="fas fa-question-circle"></i> <strong>Need help with Encar?</strong> Most buyers find it difficult — we handle everything for you.</div>
+<div class="encar-title"><i class="fas fa-database"></i> Market Reference: Encar.com</div>
+<div class="encar-logos"><i class="fas fa-chart-simple"></i> Korea's largest auto platform</div>
 </div>
-<div id="encarContainer" class="encar-grid">
-<div class="encar-card">
-<div class="car-brand">Mercedes-Benz</div>
-<div class="car-name">E-Class E350</div>
-<div class="car-meta">2022 · 45,000 km</div>
-<div class="car-price">₩68,500,000</div>
-<div class="encar-badge"><i class="fas fa-building"></i> via Encar platform</div>
+<div class="encar-note"><strong>📌 Note:</strong> Encar is used as a market pricing reference. All our vehicles are sourced directly — brand new or personally inspected pre-owned. <i class="fas fa-shield-heart"></i></div>
 </div>
-<div class="encar-card">
-<div class="car-brand">BMW</div>
-<div class="car-name">5 Series 520d</div>
-<div class="car-meta">2023 · 32,000 km</div>
-<div class="car-price">₩71,200,000</div>
-<div class="encar-badge"><i class="fas fa-building"></i> via Encar platform</div>
-</div>
-<div class="encar-card">
-<div class="car-brand">Lexus</div>
-<div class="car-name">ES300h</div>
-<div class="car-meta">2024 · 15,000 km</div>
-<div class="car-price">₩62,800,000</div>
-<div class="encar-badge"><i class="fas fa-building"></i> via Encar platform</div>
-</div>
-</div>
-<div class="encar-note"><i class="fas fa-handshake"></i> We assist with bidding, inspection, paperwork & shipping — you don't need to navigate Encar alone.</div>
-</section>
 
-<section id="contact" class="section">
+<!-- Contact Section -->
+<section id="contact" class="section" style="background: var(--gray);">
 <div class="sec-tag">Get In Touch</div>
-<h2 class="sec-title">Start Your Export Journey</h2>
-<div style="margin-top:1.5rem">
-<p><i class="fab fa-whatsapp" style="color:#25D366;font-size:1.2rem;margin-right:0.5rem"></i> <strong>WhatsApp:</strong> <a href="https://wa.me/821083434464" style="color:var(--gold)">+82 10 8343 4464</a></p>
-<p style="margin-top:0.8rem"><i class="fab fa-telegram" style="color:#0088cc;font-size:1.2rem;margin-right:0.5rem"></i> <strong>Telegram:</strong> <a href="https://t.me/prestigeauto_kr" style="color:var(--gold)">@prestigeauto_kr</a></p>
-<p style="margin-top:0.8rem"><i class="far fa-envelope" style="font-size:1.2rem;margin-right:0.5rem"></i> <strong>Email:</strong> prestigeautokr@gmail.com</p>
+<h2 class="sec-title">Start Your Journey</h2>
+<div style="margin-top: 1.5rem;">
+<p style="margin: 0.5rem 0;"><i class="fab fa-whatsapp" style="color:#25D366; width: 28px;"></i> <strong>WhatsApp:</strong> <a href="https://wa.me/821083434464" style="color: var(--gold);">+82 10 8343 4464</a></p>
+<p style="margin: 0.5rem 0;"><i class="fab fa-telegram" style="color:#0088cc; width: 28px;"></i> <strong>Telegram:</strong> <a href="https://t.me/prestigeauto_kr" style="color: var(--gold);">@prestigeauto_kr</a></p>
+<p style="margin: 0.5rem 0;"><i class="far fa-envelope" style="width: 28px;"></i> <strong>Email:</strong> prestigeautokr@gmail.com</p>
 </div>
 </section>
 
 <footer>
 <div class="foot-bottom">
-<span>© 2025 Prestige Auto KR · Luxury & Supercar Specialists</span>
+<span>© 2025 Prestige Auto KR · Luxury, Supercar & Everyday Specialists</span>
 <div class="foot-socials">
 <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
 <a href="#"><i class="fab fa-whatsapp"></i> WhatsApp</a>
@@ -226,82 +591,127 @@ footer{background:var(--black);color:white;padding:3rem}
 </footer>
 
 <script>
-// EXCLUSIVE VEHICLES (Encarsiz — to'liq luxury/premium/supercar)
-const luxuryCars = [
-    { id:1, brand:"Mercedes-Benz", model:"S-Class Maybach S680", year:2024, price:289000000, category:"Luxury", body:"Sedan" },
-    { id:2, brand:"BMW", model:"XM Label Red", year:2024, price:199500000, category:"Premium", body:"SUV" },
-    { id:3, brand:"Lexus", model:"LM 500h Executive", year:2025, price:174000000, category:"Luxury", body:"SUV" },
-    { id:4, brand:"Porsche", model:"911 Turbo S", year:2023, price:298000000, category:"Premium", body:"Coupe" },
-    { id:5, brand:"Bentley", model:"Continental GT Speed", year:2025, price:378000000, category:"Luxury", body:"Coupe" },
-    { id:6, brand:"Rolls-Royce", model:"Ghost Extended", year:2024, price:670000000, category:"Luxury", body:"Sedan" },
-    { id:7, brand:"Mercedes-Benz", model:"G-Class G63 AMG", year:2024, price:285000000, category:"Luxury", body:"SUV" },
-    { id:8, brand:"BMW", model:"M8 Competition", year:2023, price:168000000, category:"Premium", body:"Coupe" },
-    { id:9, brand:"Porsche", model:"Taycan Turbo GT", year:2025, price:242000000, category:"Premium", body:"Sedan" },
-    { id:10, brand:"Lexus", model:"LC 500 Convertible", year:2024, price:142000000, category:"Luxury", body:"Convertible" }
+// Complete vehicle database - Brand new, Luxury, Premium, Supercars, Everyday
+const allVehicles = [
+    // LUXURY
+    { id: 1, brand: "Mercedes-Benz", model: "S-Class Maybach S680", year: 2024, price: 289000000, category: "Luxury", type: "Sedan", condition: "Brand New" },
+    { id: 2, brand: "Rolls-Royce", model: "Ghost Extended", year: 2024, price: 670000000, category: "Luxury", type: "Sedan", condition: "Brand New" },
+    { id: 3, brand: "Bentley", model: "Continental GT Speed", year: 2025, price: 378000000, category: "Luxury", type: "Coupe", condition: "Brand New" },
+    { id: 4, brand: "Lexus", model: "LM 500h Executive", year: 2025, price: 174000000, category: "Luxury", type: "SUV", condition: "Brand New" },
+    { id: 5, brand: "Mercedes-Benz", model: "G-Class G63 AMG", year: 2024, price: 285000000, category: "Luxury", type: "SUV", condition: "Like New" },
+    
+    // PREMIUM
+    { id: 6, brand: "BMW", model: "XM Label Red", year: 2024, price: 199500000, category: "Premium", type: "SUV", condition: "Brand New" },
+    { id: 7, brand: "Porsche", model: "911 Turbo S", year: 2023, price: 298000000, category: "Premium", type: "Coupe", condition: "Like New" },
+    { id: 8, brand: "BMW", model: "M8 Competition", year: 2023, price: 168000000, category: "Premium", type: "Coupe", condition: "Like New" },
+    { id: 9, brand: "Porsche", model: "Taycan Turbo GT", year: 2025, price: 242000000, category: "Premium", type: "Sedan", condition: "Brand New" },
+    { id: 10, brand: "Lexus", model: "LC 500", year: 2024, price: 142000000, category: "Premium", type: "Coupe", condition: "Brand New" },
+    
+    // SUPERCARS
+    { id: 11, brand: "Ferrari", model: "SF90 Stradale", year: 2023, price: 595000000, category: "Supercar", type: "Supercar", condition: "Pre-owned" },
+    { id: 12, brand: "Lamborghini", model: "Revuelto", year: 2024, price: 899000000, category: "Supercar", type: "Supercar", condition: "Brand New" },
+    { id: 13, brand: "McLaren", model: "750S", year: 2024, price: 520000000, category: "Supercar", type: "Supercar", condition: "Brand New" },
+    { id: 14, brand: "Ferrari", model: "296 GTB", year: 2024, price: 438000000, category: "Supercar", type: "Supercar", condition: "Like New" },
+    { id: 15, brand: "Lamborghini", model: "Huracán Tecnica", year: 2023, price: 365000000, category: "Supercar", type: "Supercar", condition: "Pre-owned" },
+    { id: 16, brand: "Aston Martin", model: "DB12", year: 2025, price: 398000000, category: "Supercar", type: "Supercar", condition: "Brand New" },
+    
+    // EVERYDAY (hamyonbop)
+    { id: 17, brand: "Hyundai", model: "Sonata N Line", year: 2024, price: 38500000, category: "Everyday", type: "Sedan", condition: "Brand New" },
+    { id: 18, brand: "Kia", model: "K8", year: 2024, price: 42500000, category: "Everyday", type: "Sedan", condition: "Brand New" },
+    { id: 19, brand: "Toyota", model: "Camry Hybrid", year: 2024, price: 45800000, category: "Everyday", type: "Sedan", condition: "Brand New" },
+    { id: 20, brand: "Hyundai", model: "Tucson", year: 2024, price: 32800000, category: "Everyday", type: "SUV", condition: "Brand New" },
+    { id: 21, brand: "Kia", model: "Sportage", year: 2024, price: 34500000, category: "Everyday", type: "SUV", condition: "Brand New" },
+    { id: 22, brand: "Hyundai", model: "Santa Fe", year: 2025, price: 49800000, category: "Everyday", type: "SUV", condition: "Brand New" },
+    { id: 23, brand: "Kia", model: "Carnival", year: 2024, price: 46500000, category: "Everyday", type: "MPV", condition: "Brand New" }
 ];
 
-const supercars = [
-    { id:11, brand:"Ferrari", model:"SF90 Stradale", year:2023, price:595000000, category:"Supercar", body:"Supercar" },
-    { id:12, brand:"Lamborghini", model:"Revuelto", year:2024, price:899000000, category:"Supercar", body:"Supercar" },
-    { id:13, brand:"McLaren", model:"750S", year:2024, price:520000000, category:"Supercar", body:"Supercar" },
-    { id:14, brand:"Ferrari", model:"296 GTB", year:2024, price:438000000, category:"Supercar", body:"Supercar" },
-    { id:15, brand:"Lamborghini", model:"Huracán Tecnica", year:2023, price:365000000, category:"Supercar", body:"Supercar" },
-    { id:16, brand:"Aston Martin", model:"DB12 Volante", year:2025, price:398000000, category:"Supercar", body:"Convertible" }
-];
+let currentCategory = "all";
 
-function displayCars(cars, containerId) {
-    const container = document.getElementById(containerId);
-    if(!container) return;
-    container.innerHTML = cars.map(car => `
-        <div class="car-card" onclick="alert('${car.brand} ${car.model}\\nYear: ${car.year}\\nPrice: ₩${car.price.toLocaleString()}\\nContact us for export details!')">
-            <div class="car-img"><i class="fas fa-${car.category === 'Supercar' ? 'rocket' : 'car'}"></i></div>
-            <div class="car-body">
-                <div class="car-brand">${car.category} · ${car.body}</div>
-                <div class="car-name">${car.model}</div>
-                <div class="car-meta"><i class="far fa-calendar-alt"></i> ${car.year} · ${car.brand}</div>
-                <div class="car-price">₩${car.price.toLocaleString()}</div>
-                <div class="car-badge"><i class="fas fa-check-circle"></i> Ready for export</div>
+function displayVehicles(vehicles) {
+    const container = document.getElementById('carsContainer');
+    container.innerHTML = vehicles.map(car => {
+        let icon = "🚗";
+        if (car.category === "Supercar") icon = "🏎️";
+        else if (car.category === "Luxury") icon = "👑";
+        else if (car.category === "Premium") icon = "⭐";
+        
+        return `
+            <div class="car-card" onclick="alert('${car.brand} ${car.model}\\nYear: ${car.year}\\nPrice: ₩${car.price.toLocaleString()}\\nCondition: ${car.condition}\\n\\nContact us for export details!')">
+                <div class="car-img">${icon}</div>
+                <div class="car-body">
+                    <div class="car-brand">${car.category} · ${car.type}</div>
+                    <div class="car-name">${car.model}</div>
+                    <div class="car-meta"><i class="far fa-calendar-alt"></i> ${car.year} · ${car.brand}</div>
+                    <div class="car-price">₩${car.price.toLocaleString()}</div>
+                    <div class="car-badge"><i class="fas fa-${car.condition === 'Brand New' ? 'factory' : 'check-circle'}"></i> ${car.condition} · Ready</div>
+                </div>
             </div>
-        </div>
-    `).join('');
+        `;
+    }).join('');
+    document.getElementById('carCount').innerText = vehicles.length;
 }
 
-function filterLuxury() {
+function filterVehicles() {
     const brand = document.getElementById('brandFilter').value;
-    const yearFrom = parseInt(document.getElementById('yearFrom').value) || 2015;
+    const yearFrom = parseInt(document.getElementById('yearFrom').value) || 2000;
     const yearTo = parseInt(document.getElementById('yearTo').value) || 2025;
     const priceTo = parseInt(document.getElementById('priceTo').value) || 9999999999;
-    const category = document.getElementById('categoryFilter').value;
     
-    let filtered = luxuryCars.filter(car => {
-        if(brand !== 'all' && car.brand !== brand) return false;
-        if(car.year < yearFrom || car.year > yearTo) return false;
-        if(car.price > priceTo) return false;
-        if(category !== 'all' && car.category !== category) return false;
+    let filtered = allVehicles.filter(car => {
+        if (currentCategory !== "all" && car.category !== currentCategory) return false;
+        if (brand !== "all" && car.brand !== brand) return false;
+        if (car.year < yearFrom || car.year > yearTo) return false;
+        if (car.price > priceTo) return false;
         return true;
     });
     
-    document.getElementById('carCount').innerText = filtered.length;
-    displayCars(filtered, 'carsContainer');
+    displayVehicles(filtered);
 }
 
 function applyFilters() {
-    filterLuxury();
+    filterVehicles();
 }
 
 function resetFilters() {
     document.getElementById('brandFilter').value = 'all';
     document.getElementById('yearFrom').value = '2020';
     document.getElementById('yearTo').value = '2025';
-    document.getElementById('priceTo').value = '1000000000';
-    document.getElementById('categoryFilter').value = 'all';
-    applyFilters();
+    document.getElementById('priceTo').value = '900000000';
+    filterVehicles();
 }
 
-// Supercars alohida ko'rsatish
-displayCars(luxuryCars, 'carsContainer');
-displayCars(supercars, 'supercarsContainer');
-document.getElementById('carCount').innerText = luxuryCars.length;
+// Category switching
+document.querySelectorAll('.cat-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentCategory = btn.getAttribute('data-cat');
+        filterVehicles();
+    });
+});
+
+// Navbar category links
+document.querySelectorAll('.nav-links a').forEach(link => {
+    const cat = link.getAttribute('data-cat');
+    if (cat) {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            currentCategory = cat;
+            document.querySelectorAll('.cat-btn').forEach(btn => {
+                if (btn.getAttribute('data-cat') === cat) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+            filterVehicles();
+            document.getElementById('inventory').scrollIntoView({ behavior: 'smooth' });
+        });
+    }
+});
+
+// Initial load
+displayVehicles(allVehicles);
 </script>
 </body>
 </html>

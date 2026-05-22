@@ -4,7 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Prestige Auto KR</title>
+<!-- Font Awesome 6 (logolar uchun) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
+/* AVVALGI STYLELAR (o'zgarmagan) */
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--gold:#C9A84C;--black:#0A0A0A;--white:#FAFAF8;--gray:#F5F4F0;--muted:#888}
 body{font-family:'Segoe UI',Arial,sans-serif;background:var(--white);color:var(--black);overflow-x:hidden}
@@ -112,9 +115,24 @@ footer{background:var(--black);color:white;padding:4rem 3rem 2.5rem}
 .foot-links a:hover{color:var(--gold)}
 .foot-bottom{padding-top:2rem;border-top:1px solid rgba(255,255,255,0.06);display:flex;justify-content:space-between;align-items:center}
 .foot-copy{font-size:0.85rem;color:rgba(255,255,255,0.25)}
-.foot-socials{display:flex;gap:1.8rem}
-.foot-socials a{font-size:0.85rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.3);transition:color 0.3s}
-.foot-socials a:hover{color:var(--gold)}
+.foot-socials{display:flex;gap:2rem}
+/* LOGOLAR UCHUN YANGI STYLE */
+.foot-socials a{
+    display:flex;
+    align-items:center;
+    gap:0.5rem;
+    font-size:0.85rem;
+    letter-spacing:0.05em;
+    color:rgba(255,255,255,0.4);
+    transition:all 0.3s;
+}
+.foot-socials a i{
+    font-size:1.2rem;
+}
+.foot-socials a:hover{
+    color:var(--gold);
+    transform:translateY(-2px);
+}
 [data-lang]{display:none}[data-lang].on{display:block}
 [data-li]{display:none}[data-li].on{display:inline}
 </style>
@@ -252,7 +270,13 @@ footer{background:var(--black);color:white;padding:4rem 3rem 2.5rem}
 </div>
 <div class="foot-bottom">
 <span class="foot-copy">© 2025 Prestige Auto KR · prestigeautokr.com</span>
-<div class="foot-socials"><a href="https://www.instagram.com/prestigeauto_kr" target="_blank">Instagram</a><a href="https://www.youtube.com/@PrestigeAutoKr" target="_blank">YouTube</a><a href="https://wa.me/821083434464" target="_blank">WhatsApp</a><a href="https://t.me/prestigeauto_kr" target="_blank">Telegram</a><a href="https://www.snapchat.com/add/prestigeauto_kr" target="_blank">Snapchat</a></div>
+<div class="foot-socials">
+<a href="https://www.instagram.com/prestigeauto_kr" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+<a href="https://www.youtube.com/@PrestigeAutoKr" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+<a href="https://wa.me/821083434464" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+<a href="https://t.me/prestigeauto_kr" target="_blank"><i class="fab fa-telegram"></i> Telegram</a>
+<a href="https://www.snapchat.com/add/prestigeauto_kr" target="_blank"><i class="fab fa-snapchat"></i> Snapchat</a>
+</div>
 </div>
 </footer>
 <script>

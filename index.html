@@ -1,125 +1,410 @@
-PRESTIGE AUTO KR
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prestige Auto KR — Luxury Car Export from Korea & Japan</title>
+<meta name="description" content="Premium luxury vehicle export from Korea and Japan. Transparent pricing, global delivery.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--gold:#C9A84C;--gold-light:#E8D5A3;--black:#0A0A0A;--white:#FAFAF8;--gray:#F5F4F0;--muted:#888;--font-display:'Cormorant Garamond',Georgia,serif;--font-body:'Montserrat','Segoe UI',Arial,sans-serif}
+body{font-family:var(--font-body);background:var(--white);color:var(--black);overflow-x:hidden}
+a{text-decoration:none;color:inherit}
 
-EN
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 4rem;background:rgba(250,250,248,0.96);backdrop-filter:blur(12px);border-bottom:0.5px solid rgba(201,168,76,0.2)}
+.logo{font-family:var(--font-display);font-size:1.5rem;font-weight:500;letter-spacing:0.15em}
+.logo span{color:var(--gold)}
+.nav-links{display:flex;gap:2.5rem;list-style:none}
+.nav-links a{font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:500;transition:color 0.3s}
+.nav-links a:hover{color:var(--gold)}
+.nav-right{display:flex;align-items:center;gap:1rem}
+select.nav-sel{font-family:var(--font-body);font-size:0.7rem;letter-spacing:0.08em;border:0.5px solid rgba(201,168,76,0.4);background:transparent;padding:0.4rem 0.8rem;cursor:pointer;outline:none}
+.nav-cta{font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;padding:0.6rem 1.5rem;background:var(--black);color:var(--white);font-weight:500;transition:background 0.3s;cursor:pointer;border:none;font-family:var(--font-body)}
+.nav-cta:hover{background:var(--gold)}
 
-₩ KRW
+/* HERO */
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;margin-top:60px}
+.hero-left{padding:6rem 4rem 4rem;display:flex;flex-direction:column;justify-content:center}
+.hero-tag{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;font-weight:500}
+.hero-title{font-family:var(--font-display);font-size:4.5rem;font-weight:300;line-height:1.05;margin-bottom:2rem}
+.hero-title em{font-style:italic;color:var(--gold)}
+.hero-desc{font-size:0.78rem;line-height:1.9;color:var(--muted);max-width:380px;margin-bottom:3rem}
+.hero-btns{display:flex;gap:1.2rem}
+.btn-black{font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;padding:1rem 2.5rem;background:var(--black);color:var(--white);border:none;cursor:pointer;font-family:var(--font-body);font-weight:500;transition:background 0.3s}
+.btn-black:hover{background:var(--gold)}
+.btn-out{font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;padding:1rem 2rem;background:transparent;color:var(--black);border:0.5px solid var(--black);cursor:pointer;font-family:var(--font-body);font-weight:500;transition:all 0.3s}
+.btn-out:hover{border-color:var(--gold);color:var(--gold)}
+.hero-stats{display:flex;gap:3rem;margin-top:4rem;padding-top:2rem;border-top:0.5px solid rgba(0,0,0,0.08)}
+.stat-num{font-family:var(--font-display);font-size:2.2rem;font-weight:400}
+.stat-lbl{font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-top:0.2rem}
+.hero-right{background:linear-gradient(145deg,#E8E4DA,#C5BFB2);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.hero-car-svg{width:85%;position:relative;z-index:1}
+.hero-badge{position:absolute;bottom:2rem;left:2rem;background:rgba(250,250,248,0.95);padding:1rem 1.5rem}
+.hero-badge-tag{font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted)}
+.hero-badge-name{font-family:var(--font-display);font-size:1.1rem;font-weight:500;margin-top:0.2rem}
+.hero-badge-price{font-size:0.7rem;color:var(--gold);font-weight:500;margin-top:0.1rem}
 
+/* PLATFORMS */
+.platforms{background:var(--black);padding:1.2rem 4rem;display:flex;align-items:center;gap:0}
+.plat-lbl{font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-right:3rem;white-space:nowrap}
+.plat-links{display:flex;gap:0}
+.plat-link{font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.55);padding:0.5rem 2rem;border-right:0.5px solid rgba(255,255,255,0.1);transition:color 0.3s;font-weight:500}
+.plat-link:hover{color:var(--gold)}
 
+/* SECTION */
+.section{padding:5rem 4rem}
+.sec-tag{font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:0.7rem}
+.sec-title{font-family:var(--font-display);font-size:2.8rem;font-weight:300;line-height:1.1}
+.sec-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:3rem}
+.see-all{font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;border-bottom:0.5px solid var(--black);padding-bottom:0.1rem;transition:color 0.3s}
+.see-all:hover{color:var(--gold);border-color:var(--gold)}
 
+/* CARS GRID */
+.cars-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5px;background:rgba(0,0,0,0.06)}
+.car-card{background:var(--white);cursor:pointer;transition:transform 0.3s}
+.car-card:hover{transform:translateY(-4px)}
+.car-thumb{width:100%;aspect-ratio:4/3;background:linear-gradient(145deg,#EDEBE5,#D8D4CC);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.car-abbr{font-family:var(--font-display);font-size:3rem;font-weight:300;color:rgba(0,0,0,0.08);letter-spacing:0.05em}
+.car-src{position:absolute;top:8px;left:8px;font-size:0.55rem;letter-spacing:0.12em;text-transform:uppercase;background:rgba(250,250,248,0.9);padding:3px 8px;color:var(--muted)}
+.car-body{padding:1.2rem 1.5rem}
+.car-brand{font-size:0.55rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);margin-bottom:0.3rem}
+.car-name{font-family:var(--font-display);font-size:1.3rem;font-weight:500;margin-bottom:0.2rem}
+.car-meta{font-size:0.7rem;color:var(--muted)}
+.car-foot{display:flex;align-items:center;justify-content:space-between;margin-top:0.8rem;padding-top:0.8rem;border-top:0.5px solid rgba(0,0,0,0.06)}
+.car-price{font-size:0.8rem;font-weight:600}
+.car-type{font-size:0.55rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.3rem 0.7rem;border:0.5px solid rgba(201,168,76,0.4);color:var(--gold)}
 
-500+
-30+
-4.9★
-Featured Vehicle
-Genesis G90 2024
-₩95,000,000
-Encar.com
-KB Cha Cha Cha
-Hey Dealer
-MBZ
-🇰🇷 Encar
-Mercedes-Benz
-E-Class 300
-2024 · 8,200 km · Black
-₩78,000,000
-Sedan
-LX6
-🇯🇵 Hey Dealer
-Lexus
-LX 600
-2024 · 12,000 km · White
-₩125,000,000
-SUV
-G90
-🇰🇷 KB CCC
-Genesis
-G90
-2024 · 4,500 km · Silver
-₩95,000,000
-Flagship
-BMW
-🇰🇷 Encar
-BMW
-7 Series 740i
-2023 · 15,000 km · Black
-₩89,000,000
-Sedan
-LC3
-🇯🇵 Hey Dealer
-Toyota
-Land Cruiser 300
-2024 · 6,000 km · White
-₩110,000,000
-SUV
-PCY
-🇰🇷 KB CCC
-Porsche
-Cayenne S
-2024 · 9,200 km · Grey
-₩142,000,000
-SUV
+/* CALC */
+.calc-sec{background:var(--black);padding:5rem 4rem;color:var(--white)}
+.calc-inner{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.calc-sec .sec-title{color:var(--white)}
+.calc-sec p{font-size:0.75rem;line-height:1.9;color:rgba(255,255,255,0.45);margin-top:1.5rem;max-width:380px}
+.calc-form{background:rgba(255,255,255,0.04);border:0.5px solid rgba(255,255,255,0.08);padding:2.5rem}
+.c-label{display:block;font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:0.5rem}
+.c-input{width:100%;background:rgba(255,255,255,0.05);border:0.5px solid rgba(255,255,255,0.1);color:var(--white);padding:0.8rem 1rem;font-family:var(--font-body);font-size:0.8rem;outline:none;margin-bottom:1.2rem;transition:border-color 0.3s}
+.c-input:focus{border-color:rgba(201,168,76,0.5)}
+.c-input option{background:#1a1a1a}
+.c-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.c-result{margin-top:1.5rem;padding-top:1.5rem;border-top:0.5px solid rgba(255,255,255,0.08)}
+.c-rrow{display:flex;justify-content:space-between;margin-bottom:0.6rem}
+.c-rlbl{font-size:0.65rem;letter-spacing:0.08em;color:rgba(255,255,255,0.4)}
+.c-rval{font-size:0.75rem;color:rgba(255,255,255,0.7);font-weight:500}
+.c-total{display:flex;justify-content:space-between;margin-top:1rem;padding-top:1rem;border-top:0.5px solid rgba(201,168,76,0.2)}
+.c-tlbl{font-family:var(--font-display);font-size:1rem;color:rgba(255,255,255,0.6)}
+.c-tval{font-family:var(--font-display);font-size:1.5rem;color:var(--gold)}
 
+/* REVIEWS */
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3rem}
+.rev-card{padding:2rem;border:0.5px solid rgba(0,0,0,0.08)}
+.rev-stars{color:var(--gold);font-size:0.75rem;margin-bottom:1rem}
+.rev-text{font-family:var(--font-display);font-size:1.05rem;line-height:1.7;margin-bottom:1.5rem}
+.rev-author{font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted)}
+.rev-country{font-size:0.6rem;color:var(--gold);margin-top:0.2rem}
 
-Mercedes E-Class 2024
+/* ABOUT */
+.about-strip{display:grid;grid-template-columns:1fr 1fr;min-height:420px}
+.about-img{background:var(--black);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.about-img-big{font-family:var(--font-display);font-size:12rem;font-weight:300;color:rgba(255,255,255,0.04);position:absolute;letter-spacing:-0.05em}
+.about-content{padding:5rem 4rem;background:var(--gray);display:flex;flex-direction:column;justify-content:center}
+.about-content .sec-title{font-size:2.5rem}
+.about-p{font-size:0.75rem;line-height:1.9;color:var(--muted);margin-top:1.5rem;max-width:420px}
+.about-list{list-style:none;margin-top:2rem}
+.about-list li{font-size:0.7rem;padding:0.8rem 0;border-bottom:0.5px solid rgba(0,0,0,0.06);display:flex;align-items:center;gap:1rem}
+.about-list li::before{content:'';width:20px;height:0.5px;background:var(--gold);flex-shrink:0}
 
-Saudi Arabia 🇸🇦
+/* CONTACT */
+.contact-sec{padding:5rem 4rem}
+.contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:5rem}
+.contact-details{margin-top:2.5rem}
+.c-item{display:flex;align-items:flex-start;gap:1.5rem;margin-bottom:1.8rem}
+.c-icon{width:36px;height:36px;border:0.5px solid rgba(201,168,76,0.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1rem}
+.c-ilbl{font-size:0.55rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted)}
+.c-ival{font-size:0.8rem;font-weight:500;margin-top:0.2rem}
+.contact-form{padding:2.5rem;border:0.5px solid rgba(0,0,0,0.08)}
+.f-group{margin-bottom:1.2rem}
+.f-label{display:block;font-size:0.55rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:0.4rem}
+.f-input{width:100%;border:0.5px solid rgba(0,0,0,0.12);padding:0.8rem 1rem;font-family:var(--font-body);font-size:0.8rem;outline:none;background:transparent;transition:border-color 0.3s}
+.f-input:focus{border-color:var(--gold)}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
 
-₩ KRW
-Container
+/* FOOTER */
+footer{background:var(--black);color:var(--white);padding:4rem 4rem 2rem}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
+.foot-brand p{font-size:0.7rem;line-height:1.8;color:rgba(255,255,255,0.3);margin-top:1rem;max-width:260px}
+.foot-title{font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:1.2rem}
+.foot-links{list-style:none}
+.foot-links li{margin-bottom:0.6rem}
+.foot-links a{font-size:0.7rem;color:rgba(255,255,255,0.4);transition:color 0.3s}
+.foot-links a:hover{color:var(--gold)}
+.foot-bottom{padding-top:2rem;border-top:0.5px solid rgba(255,255,255,0.06);display:flex;justify-content:space-between;align-items:center}
+.foot-copy{font-size:0.6rem;letter-spacing:0.08em;color:rgba(255,255,255,0.25)}
+.foot-socials{display:flex;gap:1.5rem}
+.foot-socials a{font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.3);transition:color 0.3s}
+.foot-socials a:hover{color:var(--gold)}
 
-20ft (1 car)
-₩78,000,000
-₩3,200,000
-₩390,000
-₩81,590,000
-★★★★★
-"From Encar selection to Riyadh delivery — seamless. Transparent pricing, zero hidden fees."
-Ahmed Al-Rashid
-Saudi Arabia 🇸🇦
-★★★★★
-"Genesis G80 в Москве в отличном состоянии. Команда всегда на связи, все документы в порядке."
-Дмитрий Волков
-Russia 🇷🇺
-★★★★★
-"Lexus LX 600ni Toshkentga olib keldim. Narx aniq, konteyner muddatida keldi!"
-Jasur Mirzayev
-Uzbekistan 🇺🇿
-PA
-PRESTIGE
+/* LANG */
+[data-lang]{display:none}[data-lang].on{display:block}
+[data-li]{display:none}[data-li].on{display:inline}
+</style>
+</head>
+<body>
 
-📍
-Office
-Seoul, South Korea
-🌐
-Website
-prestigeautokr.com
-💬
-WhatsApp / Telegram
-+82 10 XXXX XXXX
-📧
-Email
-info@prestigeautokr.com
-Ahmed Al-Rashid
-UAE
-Mercedes E-Class 2024
+<nav>
+  <div class="logo">PRESTIGE <span>AUTO</span> <span style="font-size:0.8rem;color:var(--muted);letter-spacing:0.1em">KR</span></div>
+  <ul class="nav-links">
+    <li><a href="#catalog"><span data-li="en on">Catalog</span><span data-li="ru">Каталог</span><span data-li="ar">المعرض</span><span data-li="uz">Katalog</span></a></li>
+    <li><a href="#about"><span data-li="en on">About</span><span data-li="ru">О нас</span><span data-li="ar">من نحن</span><span data-li="uz">Biz haqimizda</span></a></li>
+    <li><a href="#reviews"><span data-li="en on">Reviews</span><span data-li="ru">Отзывы</span><span data-li="ar">التقييمات</span><span data-li="uz">Sharhlar</span></a></li>
+    <li><a href="#contact"><span data-li="en on">Contact</span><span data-li="ru">Контакт</span><span data-li="ar">اتصل</span><span data-li="uz">Aloqa</span></a></li>
+  </ul>
+  <div class="nav-right">
+    <select class="nav-sel" onchange="setLang(this.value)">
+      <option value="en">EN</option><option value="ru">RU</option><option value="ar">AR</option><option value="uz">UZ</option>
+    </select>
+    <select class="nav-sel" onchange="setCur(this.value)">
+      <option value="KRW">₩ KRW</option><option value="USD">$ USD</option><option value="AED">AED</option><option value="RUB">₽ RUB</option>
+    </select>
+    <button class="nav-cta" onclick="scrollTo('contact')"><span data-li="en on">Inquire</span><span data-li="ru">Запрос</span><span data-li="ar">استفسر</span><span data-li="uz">So'rov</span></button>
+  </div>
+</nav>
 
-$30,000–$50,000
-Any requirements...
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-tag"><span data-li="en on">Korea & Japan Premium Auto Export</span><span data-li="ru">Премиальный экспорт из Кореи и Японии</span><span data-li="ar">تصدير السيارات الفاخرة</span><span data-li="uz">Korea va Yaponiyadan premium eksport</span></div>
+    <h1 class="hero-title">
+      <span data-lang="en on">Drive<br>Beyond<br><em>Borders</em></span>
+      <span data-lang="ru">Езди<br>Без<br><em>Границ</em></span>
+      <span data-lang="ar">قُد<br>بلا<br><em>حدود</em></span>
+      <span data-lang="uz">Chegara<br>Bilmay<br><em>Hayda</em></span>
+    </h1>
+    <p class="hero-desc">
+      <span data-li="en on">Curated luxury vehicles directly from Korea and Japan. Transparent pricing, global container delivery.</span>
+      <span data-li="ru">Отборные авто напрямую из Кореи и Японии. Прозрачные цены, доставка по всему миру.</span>
+      <span data-li="ar">سيارات فاخرة مختارة من كوريا واليابان. أسعار شفافة وتوصيل عالمي.</span>
+      <span data-li="uz">Korea va Yaponiyadan tanlangan hashamatli avtomobillar. Shaffof narxlar, global yetkazib berish.</span>
+    </p>
+    <div class="hero-btns">
+      <button class="btn-black" onclick="document.getElementById('catalog').scrollIntoView({behavior:'smooth'})"><span data-li="en on">View Catalog</span><span data-li="ru">Каталог</span><span data-li="ar">عرض</span><span data-li="uz">Katalog</span></button>
+      <button class="btn-out" onclick="document.getElementById('calc').scrollIntoView({behavior:'smooth'})"><span data-li="en on">Export Price</span><span data-li="ru">Цена экспорта</span><span data-li="ar">سعر التصدير</span><span data-li="uz">Eksport narxi</span></button>
+    </div>
+    <div class="hero-stats">
+      <div><div class="stat-num">500+</div><div class="stat-lbl"><span data-li="en on">Cars Exported</span><span data-li="ru">Экспортировано</span><span data-li="ar">سيارة</span><span data-li="uz">Eksport</span></div></div>
+      <div><div class="stat-num">30+</div><div class="stat-lbl"><span data-li="en on">Countries</span><span data-li="ru">Стран</span><span data-li="ar">دولة</span><span data-li="uz">Davlat</span></div></div>
+      <div><div class="stat-num">4.9★</div><div class="stat-lbl"><span data-li="en on">Rating</span><span data-li="ru">Рейтинг</span><span data-li="ar">تقييم</span><span data-li="uz">Baho</span></div></div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <svg class="hero-car-svg" viewBox="0 0 500 280" fill="none">
+      <rect x="60" y="140" width="380" height="80" rx="8" fill="rgba(0,0,0,0.08)"/>
+      <path d="M80 140 Q100 90 160 80 L340 80 Q400 80 420 140Z" fill="rgba(0,0,0,0.12)"/>
+      <rect x="100" y="85" width="80" height="55" rx="4" fill="rgba(255,255,255,0.25)"/>
+      <rect x="210" y="82" width="100" height="58" rx="4" fill="rgba(255,255,255,0.25)"/>
+      <rect x="330" y="88" width="70" height="52" rx="4" fill="rgba(255,255,255,0.2)"/>
+      <circle cx="135" cy="222" r="28" fill="rgba(0,0,0,0.2)"/><circle cx="135" cy="222" r="18" fill="rgba(0,0,0,0.15)"/>
+      <circle cx="365" cy="222" r="28" fill="rgba(0,0,0,0.2)"/><circle cx="365" cy="222" r="18" fill="rgba(0,0,0,0.15)"/>
+      <rect x="55" y="155" width="25" height="12" rx="3" fill="rgba(201,168,76,0.6)"/>
+      <rect x="420" y="155" width="25" height="12" rx="3" fill="rgba(255,50,50,0.5)"/>
+    </svg>
+    <div class="hero-badge">
+      <div class="hero-badge-tag">Featured Vehicle</div>
+      <div class="hero-badge-name">Genesis G90 2024</div>
+      <div class="hero-badge-price" id="heroPrice">₩95,000,000</div>
+    </div>
+  </div>
+</section>
 
-PRESTIGE AUTO KR
+<!-- PLATFORMS -->
+<div class="platforms">
+  <span class="plat-lbl"><span data-li="en on">Source Platforms</span><span data-li="ru">Платформы</span><span data-li="ar">المنصات</span><span data-li="uz">Platformalar</span></span>
+  <div class="plat-links">
+    <a href="https://www.encar.com" target="_blank" class="plat-link">Encar.com</a>
+    <a href="https://www.kbchachacha.com" target="_blank" class="plat-link">KB Cha Cha Cha</a>
+    <a href="https://www.heydealer.com" target="_blank" class="plat-link">Hey Dealer</a>
+  </div>
+</div>
 
-Catalog
-Sedan
-SUV / 4WD
-Luxury
-Electric
-Platforms
-Encar.com
-KB Cha Cha Cha
-Hey Dealer
-Company
-© 2025 Prestige Auto KR · prestigeautokr.com
-Instagram
-YouTube
-WhatsApp
-Telegram
+<!-- CATALOG -->
+<section class="section" id="catalog">
+  <div class="sec-header">
+    <div><div class="sec-tag"><span data-li="en on">Our Selection</span><span data-li="ru">Наш выбор</span><span data-li="ar">اختيارنا</span><span data-li="uz">Tanlovimiz</span></div>
+    <h2 class="sec-title"><span data-lang="en on">Featured<br>Vehicles</span><span data-lang="ru">Избранные<br>Авто</span><span data-lang="ar">السيارات<br>المميزة</span><span data-lang="uz">Tanlangan<br>Avtomobillar</span></h2></div>
+    <a href="#" class="see-all"><span data-li="en on">View all →</span><span data-li="ru">Все →</span><span data-li="ar">الكل →</span><span data-li="uz">Barchasi →</span></a>
+  </div>
+  <div class="cars-grid">
+    <div class="car-card"><div class="car-thumb"><span class="car-abbr">MBZ</span><span class="car-src">🇰🇷 Encar</span></div><div class="car-body"><div class="car-brand">Mercedes-Benz</div><div class="car-name">E-Class 300</div><div class="car-meta">2024 · 8,200 km · Black</div><div class="car-foot"><span class="car-price price" data-krw="78000000">₩78,000,000</span><span class="car-type">Sedan</span></div></div></div>
+    <div class="car-card"><div class="car-thumb" style="background:linear-gradient(145deg,#E0E0D8,#CACABE)"><span class="car-abbr">LX6</span><span class="car-src">🇯🇵 Hey Dealer</span></div><div class="car-body"><div class="car-brand">Lexus</div><div class="car-name">LX 600</div><div class="car-meta">2024 · 12,000 km · White</div><div class="car-foot"><span class="car-price price" data-krw="125000000">₩125,000,000</span><span class="car-type">SUV</span></div></div></div>
+    <div class="car-card"><div class="car-thumb" style="background:linear-gradient(145deg,#E8E2D8,#D6CFC2)"><span class="car-abbr">G90</span><span class="car-src">🇰🇷 KB CCC</span></div><div class="car-body"><div class="car-brand">Genesis</div><div class="car-name">G90</div><div class="car-meta">2024 · 4,500 km · Silver</div><div class="car-foot"><span class="car-price price" data-krw="95000000">₩95,000,000</span><span class="car-type">Flagship</span></div></div></div>
+    <div class="car-card"><div class="car-thumb" style="background:linear-gradient(145deg,#E5E3DC,#D2CFCA)"><span class="car-abbr">BMW</span><span class="car-src">🇰🇷 Encar</span></div><div class="car-body"><div class="car-brand">BMW</div><div class="car-name">7 Series 740i</div><div class="car-meta">2023 · 15,000 km · Black</div><div class="car-foot"><span class="car-price price" data-krw="89000000">₩89,000,000</span><span class="car-type">Sedan</span></div></div></div>
+    <div class="car-card"><div class="car-thumb" style="background:linear-gradient(145deg,#E2E0D9,#CECCC4)"><span class="car-abbr">LC3</span><span class="car-src">🇯🇵 Hey Dealer</span></div><div class="car-body"><div class="car-brand">Toyota</div><div class="car-name">Land Cruiser 300</div><div class="car-meta">2024 · 6,000 km · White</div><div class="car-foot"><span class="car-price price" data-krw="110000000">₩110,000,000</span><span class="car-type">SUV</span></div></div></div>
+    <div class="car-card"><div class="car-thumb" style="background:linear-gradient(145deg,#E6E1D5,#D5CEBC)"><span class="car-abbr">PCY</span><span class="car-src">🇰🇷 KB CCC</span></div><div class="car-body"><div class="car-brand">Porsche</div><div class="car-name">Cayenne S</div><div class="car-meta">2024 · 9,200 km · Grey</div><div class="car-foot"><span class="car-price price" data-krw="142000000">₩142,000,000</span><span class="car-type">SUV</span></div></div></div>
+  </div>
+</section>
+
+<!-- CALC -->
+<section class="calc-sec" id="calc">
+  <div class="calc-inner">
+    <div><div class="sec-tag"><span data-li="en on">Export Calculator</span><span data-li="ru">Калькулятор</span><span data-li="ar">الحاسبة</span><span data-li="uz">Kalkulyator</span></div>
+    <h2 class="sec-title"><span data-lang="en on">Your Price,<br>Your Country</span><span data-lang="ru">Ваша цена,<br>Ваша страна</span><span data-lang="ar">سعرك<br>لبلدك</span><span data-lang="uz">Narxingiz,<br>Davlatingiz</span></h2>
+    <p><span data-li="en on">Enter your destination and see the full price including container shipping and insurance — in your currency.</span><span data-li="ru">Укажите страну назначения и получите полную цену включая контейнер и страховку.</span><span data-li="ar">أدخل دولة المقصد واحصل على السعر الكامل شاملاً الشحن والتأمين.</span><span data-li="uz">Davlatingizni kiriting va konteyner, sug'urta bilan to'liq narxni ko'ring.</span></p></div>
+    <div class="calc-form">
+      <label class="c-label"><span data-li="en on">Vehicle</span><span data-li="ru">Авто</span><span data-li="ar">السيارة</span><span data-li="uz">Avtomobil</span></label>
+      <select class="c-input" id="cCar" onchange="calcPrice()">
+        <option value="78000000">Mercedes E-Class 2024</option>
+        <option value="125000000">Lexus LX 600 2024</option>
+        <option value="95000000">Genesis G90 2024</option>
+        <option value="89000000">BMW 7 Series 2023</option>
+        <option value="110000000">Toyota Land Cruiser 2024</option>
+        <option value="142000000">Porsche Cayenne 2024</option>
+      </select>
+      <label class="c-label"><span data-li="en on">Destination</span><span data-li="ru">Страна</span><span data-li="ar">الوجهة</span><span data-li="uz">Davlat</span></label>
+      <select class="c-input" id="cCountry" onchange="calcPrice()">
+        <option value="3200000">Saudi Arabia 🇸🇦</option>
+        <option value="3200000">UAE 🇦🇪</option>
+        <option value="3800000">Russia 🇷🇺</option>
+        <option value="2800000">Uzbekistan 🇺🇿</option>
+        <option value="4500000">Germany 🇩🇪</option>
+        <option value="4800000">USA 🇺🇸</option>
+        <option value="3600000">Kazakhstan 🇰🇿</option>
+      </select>
+      <div class="c-row">
+        <div><label class="c-label"><span data-li="en on">Currency</span><span data-li="ru">Валюта</span><span data-li="ar">العملة</span><span data-li="uz">Valyuta</span></label>
+        <select class="c-input" id="cCur" onchange="calcPrice()"><option value="KRW">₩ KRW</option><option value="USD">$ USD</option><option value="AED">AED</option><option value="RUB">₽ RUB</option></select></div>
+        <div><label class="c-label">Container</label>
+        <select class="c-input" id="cCont" onchange="calcPrice()"><option value="1">20ft (1 car)</option><option value="2">40ft (2 cars)</option></select></div>
+      </div>
+      <div class="c-result">
+        <div class="c-rrow"><span class="c-rlbl"><span data-li="en on">Car price</span><span data-li="ru">Цена авто</span><span data-li="ar">سعر السيارة</span><span data-li="uz">Avto narxi</span></span><span class="c-rval" id="rCar">₩78,000,000</span></div>
+        <div class="c-rrow"><span class="c-rlbl"><span data-li="en on">Shipping</span><span data-li="ru">Доставка</span><span data-li="ar">الشحن</span><span data-li="uz">Yetkazish</span></span><span class="c-rval" id="rShip">₩3,200,000</span></div>
+        <div class="c-rrow"><span class="c-rlbl"><span data-li="en on">Insurance (0.5%)</span><span data-li="ru">Страховка</span><span data-li="ar">التأمين</span><span data-li="uz">Sug'urta</span></span><span class="c-rval" id="rIns">₩390,000</span></div>
+        <div class="c-total"><span class="c-tlbl"><span data-li="en on">Total Export</span><span data-li="ru">Итого</span><span data-li="ar">الإجمالي</span><span data-li="uz">Jami</span></span><span class="c-tval" id="rTotal">₩81,590,000</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section" id="reviews">
+  <div class="sec-header"><div><div class="sec-tag"><span data-li="en on">Testimonials</span><span data-li="ru">Отзывы</span><span data-li="ar">الشهادات</span><span data-li="uz">Fikrlar</span></div><h2 class="sec-title"><span data-lang="en on">What Clients<br>Say</span><span data-lang="ru">Отзывы<br>Клиентов</span><span data-lang="ar">آراء<br>العملاء</span><span data-lang="uz">Mijozlar<br>Fikricha</span></h2></div></div>
+  <div class="reviews-grid">
+    <div class="rev-card"><div class="rev-stars">★★★★★</div><div class="rev-text">"From Encar selection to Riyadh delivery — seamless. Transparent pricing, zero hidden fees."</div><div class="rev-author">Ahmed Al-Rashid</div><div class="rev-country">Saudi Arabia 🇸🇦</div></div>
+    <div class="rev-card"><div class="rev-stars">★★★★★</div><div class="rev-text">"Genesis G80 в Москве в отличном состоянии. Команда всегда на связи, все документы в порядке."</div><div class="rev-author">Дмитрий Волков</div><div class="rev-country">Russia 🇷🇺</div></div>
+    <div class="rev-card"><div class="rev-stars">★★★★★</div><div class="rev-text">"Lexus LX 600ni Toshkentga olib keldim. Narx aniq, konteyner muddatida keldi!"</div><div class="rev-author">Jasur Mirzayev</div><div class="rev-country">Uzbekistan 🇺🇿</div></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<div class="about-strip" id="about">
+  <div class="about-img">
+    <div class="about-img-big">PA</div>
+    <svg viewBox="0 0 300 200" style="width:60%;position:relative;z-index:1;opacity:0.5" fill="none">
+      <circle cx="150" cy="100" r="80" stroke="rgba(201,168,76,0.3)" stroke-width="0.5"/>
+      <circle cx="150" cy="100" r="50" stroke="rgba(201,168,76,0.2)" stroke-width="0.5"/>
+      <text x="150" y="108" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="16" fill="rgba(201,168,76,0.7)" letter-spacing="4">PRESTIGE</text>
+    </svg>
+  </div>
+  <div class="about-content">
+    <div class="sec-tag"><span data-li="en on">Who We Are</span><span data-li="ru">О нас</span><span data-li="ar">من نحن</span><span data-li="uz">Biz haqimizda</span></div>
+    <h2 class="sec-title"><span data-lang="en on">Korea & Japan's<br>Export House</span><span data-lang="ru">Ведущий<br>Экспортёр</span><span data-lang="ar">وكالة التصدير<br>الرائدة</span><span data-lang="uz">Yetakchi<br>Eksport Kompaniyasi</span></h2>
+    <p class="about-p"><span data-li="en on">Based in Seoul, we connect buyers worldwide with verified premium vehicles from Korea and Japan's top platforms — Encar, KB Cha Cha Cha, and Hey Dealer.</span><span data-li="ru">Базируясь в Сеуле, мы соединяем покупателей с проверенными премиум-автомобилями из Кореи и Японии.</span><span data-li="ar">يتخذ برستيج أوتو من سيول مقراً له، ويربط المشترين بالسيارات الفاخرة من كوريا واليابان.</span><span data-li="uz">Seulda joylashgan, biz dunyo bo'ylab xaridorlarni Korea va Yaponiyaning top platformalaridan tekshirilgan premium avtomobillar bilan bog'laymiz.</span></p>
+    <ul class="about-list">
+      <li><span data-li="en on">Direct sourcing from Encar, KB Cha Cha Cha & Hey Dealer</span><span data-li="ru">Прямая закупка с ведущих платформ</span><span data-li="ar">مصادر مباشرة من أكبر المنصات</span><span data-li="uz">Top platformalardan to'g'ridan-to'g'ri</span></li>
+      <li><span data-li="en on">Full inspection & accident history check</span><span data-li="ru">Полная инспекция и история аварий</span><span data-li="ar">فحص كامل وتاريخ الحوادث</span><span data-li="uz">To'liq tekshiruv va avaria tarixi</span></li>
+      <li><span data-li="en on">Door-to-port container delivery</span><span data-li="ru">Доставка контейнером до порта</span><span data-li="ar">توصيل بالحاوية حتى الميناء</span><span data-li="uz">Portgacha konteyner yetkazish</span></li>
+      <li><span data-li="en on">Multi-currency transparent pricing</span><span data-li="ru">Прозрачные цены в нескольких валютах</span><span data-li="ar">أسعار شفافة بعملات متعددة</span><span data-li="uz">Ko'p valyutali shaffof narxlash</span></li>
+    </ul>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section class="contact-sec" id="contact">
+  <div class="contact-inner">
+    <div>
+      <div class="sec-tag"><span data-li="en on">Get In Touch</span><span data-li="ru">Связаться</span><span data-li="ar">تواصل</span><span data-li="uz">Bog'lanish</span></div>
+      <h2 class="sec-title"><span data-lang="en on">Start Your<br>Export Journey</span><span data-lang="ru">Начните<br>Экспорт</span><span data-lang="ar">ابدأ رحلة<br>التصدير</span><span data-lang="uz">Eksport<br>Safaringiz</span></h2>
+      <div class="contact-details">
+        <div class="c-item"><div class="c-icon">📍</div><div><div class="c-ilbl">Office</div><div class="c-ival">Seoul, South Korea</div></div></div>
+        <div class="c-item"><div class="c-icon">🌐</div><div><div class="c-ilbl">Website</div><div class="c-ival">prestigeautokr.com</div></div></div>
+        <div class="c-item"><div class="c-icon">💬</div><div><div class="c-ilbl">WhatsApp / Telegram</div><div class="c-ival">+82 10 XXXX XXXX</div></div></div>
+        <div class="c-item"><div class="c-icon">📧</div><div><div class="c-ilbl">Email</div><div class="c-ival">info@prestigeautokr.com</div></div></div>
+      </div>
+    </div>
+    <div class="contact-form">
+      <div class="f-row">
+        <div class="f-group"><label class="f-label"><span data-li="en on">Full Name</span><span data-li="ru">Имя</span><span data-li="ar">الاسم</span><span data-li="uz">Ism</span></label><input type="text" class="f-input" placeholder="Ahmed Al-Rashid"></div>
+        <div class="f-group"><label class="f-label"><span data-li="en on">Country</span><span data-li="ru">Страна</span><span data-li="ar">الدولة</span><span data-li="uz">Davlat</span></label><input type="text" class="f-input" placeholder="UAE"></div>
+      </div>
+      <div class="f-group"><label class="f-label"><span data-li="en on">Vehicle of Interest</span><span data-li="ru">Желаемое авто</span><span data-li="ar">السيارة</span><span data-li="uz">Qiziqtirgan avto</span></label><input type="text" class="f-input" placeholder="Mercedes E-Class 2024"></div>
+      <div class="f-group"><label class="f-label"><span data-li="en on">Budget</span><span data-li="ru">Бюджет</span><span data-li="ar">الميزانية</span><span data-li="uz">Byudjet</span></label>
+        <select class="f-input"><option>$30,000–$50,000</option><option>$50,000–$80,000</option><option>$80,000–$120,000</option><option>$120,000+</option></select></div>
+      <div class="f-group"><label class="f-label"><span data-li="en on">Message</span><span data-li="ru">Сообщение</span><span data-li="ar">الرسالة</span><span data-li="uz">Xabar</span></label><textarea class="f-input" rows="3" placeholder="Any requirements..."></textarea></div>
+      <button class="btn-black" style="width:100%;margin-top:0.5rem" onclick="sendInquiry()"><span data-li="en on">Send Inquiry</span><span data-li="ru">Отправить</span><span data-li="ar">إرسال</span><span data-li="uz">Yuborish</span></button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-grid">
+    <div class="foot-brand"><div class="logo" style="color:var(--white)">PRESTIGE <span>AUTO</span> <span style="font-size:0.8rem;color:var(--muted)">KR</span></div><p><span data-li="en on">Korea & Japan's premier luxury vehicle export. Transparent pricing, global delivery.</span><span data-li="ru">Премиальный экспорт авто из Кореи и Японии.</span><span data-li="ar">خدمة تصدير السيارات الفاخرة من كوريا واليابان.</span><span data-li="uz">Korea va Yaponiyadan premium eksport.</span></p></div>
+    <div><div class="foot-title">Catalog</div><ul class="foot-links"><li><a href="#">Sedan</a></li><li><a href="#">SUV / 4WD</a></li><li><a href="#">Luxury</a></li><li><a href="#">Electric</a></li></ul></div>
+    <div><div class="foot-title">Platforms</div><ul class="foot-links"><li><a href="https://www.encar.com" target="_blank">Encar.com</a></li><li><a href="https://www.kbchachacha.com" target="_blank">KB Cha Cha Cha</a></li><li><a href="https://www.heydealer.com" target="_blank">Hey Dealer</a></li></ul></div>
+    <div><div class="foot-title">Company</div><ul class="foot-links"><li><a href="#about"><span data-li="en on">About</span><span data-li="ru">О нас</span><span data-li="ar">من نحن</span><span data-li="uz">Biz haqimizda</span></a></li><li><a href="#reviews"><span data-li="en on">Reviews</span><span data-li="ru">Отзывы</span><span data-li="ar">التقييمات</span><span data-li="uz">Sharhlar</span></a></li><li><a href="#contact"><span data-li="en on">Contact</span><span data-li="ru">Контакт</span><span data-li="ar">اتصل</span><span data-li="uz">Aloqa</span></a></li></ul></div>
+  </div>
+  <div class="foot-bottom">
+    <span class="foot-copy">© 2025 Prestige Auto KR · prestigeautokr.com</span>
+    <div class="foot-socials"><a href="#">Instagram</a><a href="#">YouTube</a><a href="#">WhatsApp</a><a href="#">Telegram</a></div>
+  </div>
+</footer>
+
+<script>
+const R={KRW:1,USD:0.00075,AED:0.00275,RUB:0.068};
+const S={KRW:'₩',USD:'$',AED:'AED ',RUB:'₽'};
+let cur='KRW',lang='en';
+
+function fmt(krw,c){c=c||cur;return S[c]+Math.round(krw*R[c]).toLocaleString()}
+
+function setLang(l){
+  lang=l;
+  document.querySelectorAll('[data-lang]').forEach(e=>e.classList.toggle('on',e.dataset.lang===l));
+  document.querySelectorAll('[data-li]').forEach(e=>e.classList.toggle('on',e.dataset.li===l));
+  document.body.style.direction=l==='ar'?'rtl':'ltr';
+  document.querySelector('select.nav-sel').value=l;
+}
+
+function setCur(c){
+  cur=c;
+  document.querySelectorAll('.price').forEach(e=>{
+    e.textContent=fmt(parseInt(e.dataset.krw));
+  });
+  document.getElementById('heroPrice').textContent=fmt(95000000);
+  document.getElementById('cCur').value=c;
+  calcPrice();
+}
+
+function calcPrice(){
+  const car=parseInt(document.getElementById('cCar').value);
+  const ship=parseInt(document.getElementById('cCountry').value);
+  const c=document.getElementById('cCur').value;
+  const cont=parseInt(document.getElementById('cCont').value);
+  const ins=Math.round(car*0.005);
+  const total=car+ship*cont+ins;
+  document.getElementById('rCar').textContent=fmt(car,c);
+  document.getElementById('rShip').textContent=fmt(ship*cont,c);
+  document.getElementById('rIns').textContent=fmt(ins,c);
+  document.getElementById('rTotal').textContent=fmt(total,c);
+}
+
+function sendInquiry(){
+  alert('Thank you! We will contact you shortly.\nShukran! Tez orada bog\'lanamiz.');
+}
+
+setLang('en');
+calcPrice();
+</script>
+</body>
+</html>

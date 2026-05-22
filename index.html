@@ -18,7 +18,6 @@
     --white: #FAFAF8;
     --gray: #F5F4F0;
     --muted: #888;
-    --dark: #1a1a1a;
 }
 
 body {
@@ -40,7 +39,7 @@ nav {
     right: 0;
     z-index: 100;
     display: flex;
-    align-items: center;
+ align-items: center;
     justify-content: space-between;
     padding: 1rem 3rem;
     background: rgba(250, 250, 248, 0.98);
@@ -71,6 +70,7 @@ nav {
     font-weight: 600;
     color: black;
     transition: color 0.3s;
+    cursor: pointer;
 }
 
 .nav-links a:hover {
@@ -102,10 +102,10 @@ nav {
 
 /* Hero with nostalgic Rolls-Royce */
 .hero {
-    min-height: 80vh;
+    min-height: 75vh;
     margin-top: 70px;
     position: relative;
-    background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 100%), url('https://images.unsplash.com/photo-1631295868223-63228b40f9e4?q=80&w=2070&auto=format');
+    background: linear-gradient(135deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.4) 100%), url('https://images.unsplash.com/photo-1631295868223-63228b40f9e4?q=80&w=2070&auto=format');
     background-size: cover;
     background-position: center 25%;
     display: flex;
@@ -119,7 +119,7 @@ nav {
     bottom: 0;
     left: 0;
     right: 0;
-    height: 150px;
+    height: 120px;
     background: linear-gradient(to top, var(--white), transparent);
     pointer-events: none;
 }
@@ -165,7 +165,7 @@ nav {
     margin-right: 0.5rem;
 }
 
-/* Section styles */
+/* Sections */
 .section {
     padding: 3rem 4rem;
 }
@@ -246,7 +246,7 @@ nav {
     border: 1px solid rgba(0,0,0,0.1);
     background: white;
     font-size: 0.85rem;
-    min-width: 130px;
+    min-width: 140px;
     border-radius: 8px;
 }
 
@@ -354,7 +354,7 @@ nav {
 }
 
 .car-price {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
     font-weight: 700;
     color: var(--black);
     margin-top: 0.6rem;
@@ -370,27 +370,22 @@ nav {
     border-radius: 20px;
 }
 
-/* Encar section (small, as reference only) */
+/* Encar reference */
 .encar-ref {
     background: linear-gradient(135deg, #f8f8f8, #efefef);
     margin: 1rem 4rem 2rem 4rem;
-    padding: 1.5rem 2rem;
-    border-radius: 20px;
+    padding: 1.2rem 2rem;
+    border-radius: 16px;
     border: 1px solid #e0e0e0;
-}
-
-.encar-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     gap: 1rem;
-    margin-bottom: 1rem;
 }
 
 .encar-title {
-    font-size: 0.9rem;
-    font-weight: 500;
+    font-size: 0.85rem;
     color: #555;
 }
 
@@ -408,19 +403,11 @@ nav {
     color: var(--gold);
 }
 
-.encar-logos {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-    font-size: 0.7rem;
-    color: #999;
-}
-
 /* Footer */
 footer {
     background: var(--black);
     color: white;
-    padding: 2.5rem 4rem;
+    padding: 2rem 4rem;
     margin-top: 2rem;
 }
 
@@ -456,17 +443,18 @@ footer {
     }
     .hero {
         padding: 2rem;
-        min-height: 60vh;
+        min-height: 55vh;
     }
     .hero-title {
-        font-size: 2.2rem;
+        font-size: 2rem;
     }
     .section {
         padding: 1.5rem;
     }
     .encar-ref {
         margin: 1rem;
-        padding: 1rem;
+        flex-direction: column;
+        text-align: center;
     }
     footer {
         padding: 1.5rem;
@@ -474,6 +462,9 @@ footer {
     .filter-bar {
         flex-direction: column;
         align-items: stretch;
+    }
+    .filter-group input, .filter-group select {
+        width: 100%;
     }
 }
 </style>
@@ -483,11 +474,11 @@ footer {
 <nav>
 <div class="logo">PRESTIGE <span>AUTO</span> KR</div>
 <ul class="nav-links">
-<li><a href="#" data-cat="all">All</a></li>
-<li><a href="#" data-cat="Luxury">Luxury</a></li>
-<li><a href="#" data-cat="Premium">Premium</a></li>
-<li><a href="#" data-cat="Supercar">Supercars</a></li>
-<li><a href="#" data-cat="Everyday">Everyday</a></li>
+<li><a data-cat="all">All</a></li>
+<li><a data-cat="Luxury">Luxury</a></li>
+<li><a data-cat="Premium">Premium</a></li>
+<li><a data-cat="Supercar">Supercars</a></li>
+<li><a data-cat="Everyday">Everyday</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
 <div class="nav-right">
@@ -495,7 +486,7 @@ footer {
 </div>
 </nav>
 
-<!-- Hero with nostalgic Rolls-Royce -->
+<!-- Hero section -->
 <section class="hero">
 <div class="hero-content">
 <h1 class="hero-title">Luxury &<br><em>Everyday</em> Excellence</h1>
@@ -504,7 +495,7 @@ footer {
 </div>
 </section>
 
-<!-- Main Inventory Section -->
+<!-- Main Inventory -->
 <section id="inventory" class="section">
 <div class="sec-tag"><i class="fas fa-gem"></i> Our Collection</div>
 <h2 class="sec-title">Vehicles For Every Need</h2>
@@ -530,6 +521,10 @@ footer {
 <option value="Porsche">Porsche</option>
 <option value="Ferrari">Ferrari</option>
 <option value="Lamborghini">Lamborghini</option>
+<option value="McLaren">McLaren</option>
+<option value="Aston Martin">Aston Martin</option>
+<option value="Bentley">Bentley</option>
+<option value="Rolls-Royce">Rolls-Royce</option>
 <option value="Hyundai">Hyundai</option>
 <option value="Kia">Kia</option>
 <option value="Toyota">Toyota</option>
@@ -537,18 +532,18 @@ footer {
 </div>
 <div class="filter-group">
 <label>Min Year</label>
-<input type="number" id="yearFrom" value="2020">
+<input type="number" id="yearFrom" value="2020" min="2015" max="2025">
 </div>
 <div class="filter-group">
 <label>Max Year</label>
-<input type="number" id="yearTo" value="2025">
+<input type="number" id="yearTo" value="2025" min="2015" max="2025">
 </div>
 <div class="filter-group">
 <label>Max Price (KRW)</label>
-<input type="number" id="priceTo" value="900000000">
+<input type="number" id="priceTo" value="900000000" step="10000000">
 </div>
-<button class="filter-btn" onclick="applyFilters()"><i class="fas fa-search"></i> Search</button>
-<button class="filter-btn reset" onclick="resetFilters()"><i class="fas fa-undo"></i> Reset</button>
+<button class="filter-btn" id="searchBtn"><i class="fas fa-search"></i> Search</button>
+<button class="filter-btn reset" id="resetBtn"><i class="fas fa-undo"></i> Reset</button>
 </div>
 
 <div class="stats-bar">
@@ -559,16 +554,13 @@ footer {
 <div id="carsContainer" class="cars-grid"></div>
 </section>
 
-<!-- Encar as reference only (sensor/censored source) -->
+<!-- Encar as reference only -->
 <div class="encar-ref">
-<div class="encar-header">
-<div class="encar-title"><i class="fas fa-database"></i> Market Reference: Encar.com</div>
-<div class="encar-logos"><i class="fas fa-chart-simple"></i> Korea's largest auto platform</div>
-</div>
-<div class="encar-note"><strong>📌 Note:</strong> Encar is used as a market pricing reference. All our vehicles are sourced directly — brand new or personally inspected pre-owned. <i class="fas fa-shield-heart"></i></div>
+<div class="encar-title"><i class="fas fa-database"></i> Market Reference: Encar.com — Korea's largest auto platform</div>
+<div class="encar-note"><strong>📌 Note:</strong> Encar is used as a pricing reference. All our vehicles are sourced directly — brand new or personally inspected.</div>
 </div>
 
-<!-- Contact Section -->
+<!-- Contact -->
 <section id="contact" class="section" style="background: var(--gray);">
 <div class="sec-tag">Get In Touch</div>
 <h2 class="sec-title">Start Your Journey</h2>
@@ -591,76 +583,91 @@ footer {
 </footer>
 
 <script>
-// Complete vehicle database - Brand new, Luxury, Premium, Supercars, Everyday
-const allVehicles = [
-    // LUXURY
-    { id: 1, brand: "Mercedes-Benz", model: "S-Class Maybach S680", year: 2024, price: 289000000, category: "Luxury", type: "Sedan", condition: "Brand New" },
-    { id: 2, brand: "Rolls-Royce", model: "Ghost Extended", year: 2024, price: 670000000, category: "Luxury", type: "Sedan", condition: "Brand New" },
-    { id: 3, brand: "Bentley", model: "Continental GT Speed", year: 2025, price: 378000000, category: "Luxury", type: "Coupe", condition: "Brand New" },
-    { id: 4, brand: "Lexus", model: "LM 500h Executive", year: 2025, price: 174000000, category: "Luxury", type: "SUV", condition: "Brand New" },
-    { id: 5, brand: "Mercedes-Benz", model: "G-Class G63 AMG", year: 2024, price: 285000000, category: "Luxury", type: "SUV", condition: "Like New" },
-    
-    // PREMIUM
-    { id: 6, brand: "BMW", model: "XM Label Red", year: 2024, price: 199500000, category: "Premium", type: "SUV", condition: "Brand New" },
-    { id: 7, brand: "Porsche", model: "911 Turbo S", year: 2023, price: 298000000, category: "Premium", type: "Coupe", condition: "Like New" },
-    { id: 8, brand: "BMW", model: "M8 Competition", year: 2023, price: 168000000, category: "Premium", type: "Coupe", condition: "Like New" },
-    { id: 9, brand: "Porsche", model: "Taycan Turbo GT", year: 2025, price: 242000000, category: "Premium", type: "Sedan", condition: "Brand New" },
-    { id: 10, brand: "Lexus", model: "LC 500", year: 2024, price: 142000000, category: "Premium", type: "Coupe", condition: "Brand New" },
-    
-    // SUPERCARS
-    { id: 11, brand: "Ferrari", model: "SF90 Stradale", year: 2023, price: 595000000, category: "Supercar", type: "Supercar", condition: "Pre-owned" },
-    { id: 12, brand: "Lamborghini", model: "Revuelto", year: 2024, price: 899000000, category: "Supercar", type: "Supercar", condition: "Brand New" },
-    { id: 13, brand: "McLaren", model: "750S", year: 2024, price: 520000000, category: "Supercar", type: "Supercar", condition: "Brand New" },
-    { id: 14, brand: "Ferrari", model: "296 GTB", year: 2024, price: 438000000, category: "Supercar", type: "Supercar", condition: "Like New" },
-    { id: 15, brand: "Lamborghini", model: "Huracán Tecnica", year: 2023, price: 365000000, category: "Supercar", type: "Supercar", condition: "Pre-owned" },
-    { id: 16, brand: "Aston Martin", model: "DB12", year: 2025, price: 398000000, category: "Supercar", type: "Supercar", condition: "Brand New" },
-    
-    // EVERYDAY (hamyonbop)
-    { id: 17, brand: "Hyundai", model: "Sonata N Line", year: 2024, price: 38500000, category: "Everyday", type: "Sedan", condition: "Brand New" },
-    { id: 18, brand: "Kia", model: "K8", year: 2024, price: 42500000, category: "Everyday", type: "Sedan", condition: "Brand New" },
-    { id: 19, brand: "Toyota", model: "Camry Hybrid", year: 2024, price: 45800000, category: "Everyday", type: "Sedan", condition: "Brand New" },
-    { id: 20, brand: "Hyundai", model: "Tucson", year: 2024, price: 32800000, category: "Everyday", type: "SUV", condition: "Brand New" },
-    { id: 21, brand: "Kia", model: "Sportage", year: 2024, price: 34500000, category: "Everyday", type: "SUV", condition: "Brand New" },
-    { id: 22, brand: "Hyundai", model: "Santa Fe", year: 2025, price: 49800000, category: "Everyday", type: "SUV", condition: "Brand New" },
-    { id: 23, brand: "Kia", model: "Carnival", year: 2024, price: 46500000, category: "Everyday", type: "MPV", condition: "Brand New" }
+// ==================== VEHICLE DATABASE ====================
+const vehicles = [
+    // Luxury
+    { id:1, brand:"Mercedes-Benz", model:"S-Class Maybach S680", year:2024, price:289000000, category:"Luxury", type:"Sedan", condition:"Brand New" },
+    { id:2, brand:"Rolls-Royce", model:"Ghost Extended", year:2024, price:670000000, category:"Luxury", type:"Sedan", condition:"Brand New" },
+    { id:3, brand:"Bentley", model:"Continental GT Speed", year:2025, price:378000000, category:"Luxury", type:"Coupe", condition:"Brand New" },
+    { id:4, brand:"Lexus", model:"LM 500h Executive", year:2025, price:174000000, category:"Luxury", type:"SUV", condition:"Brand New" },
+    { id:5, brand:"Mercedes-Benz", model:"G-Class G63 AMG", year:2024, price:285000000, category:"Luxury", type:"SUV", condition:"Like New" },
+    // Premium
+    { id:6, brand:"BMW", model:"XM Label Red", year:2024, price:199500000, category:"Premium", type:"SUV", condition:"Brand New" },
+    { id:7, brand:"Porsche", model:"911 Turbo S", year:2023, price:298000000, category:"Premium", type:"Coupe", condition:"Like New" },
+    { id:8, brand:"BMW", model:"M8 Competition", year:2023, price:168000000, category:"Premium", type:"Coupe", condition:"Like New" },
+    { id:9, brand:"Porsche", model:"Taycan Turbo GT", year:2025, price:242000000, category:"Premium", type:"Sedan", condition:"Brand New" },
+    { id:10, brand:"Lexus", model:"LC 500", year:2024, price:142000000, category:"Premium", type:"Coupe", condition:"Brand New" },
+    // Supercars
+    { id:11, brand:"Ferrari", model:"SF90 Stradale", year:2023, price:595000000, category:"Supercar", type:"Supercar", condition:"Pre-owned" },
+    { id:12, brand:"Lamborghini", model:"Revuelto", year:2024, price:899000000, category:"Supercar", type:"Supercar", condition:"Brand New" },
+    { id:13, brand:"McLaren", model:"750S", year:2024, price:520000000, category:"Supercar", type:"Supercar", condition:"Brand New" },
+    { id:14, brand:"Ferrari", model:"296 GTB", year:2024, price:438000000, category:"Supercar", type:"Supercar", condition:"Like New" },
+    { id:15, brand:"Lamborghini", model:"Huracán Tecnica", year:2023, price:365000000, category:"Supercar", type:"Supercar", condition:"Pre-owned" },
+    { id:16, brand:"Aston Martin", model:"DB12", year:2025, price:398000000, category:"Supercar", type:"Supercar", condition:"Brand New" },
+    // Everyday (hamyonbop)
+    { id:17, brand:"Hyundai", model:"Sonata N Line", year:2024, price:38500000, category:"Everyday", type:"Sedan", condition:"Brand New" },
+    { id:18, brand:"Kia", model:"K8", year:2024, price:42500000, category:"Everyday", type:"Sedan", condition:"Brand New" },
+    { id:19, brand:"Toyota", model:"Camry Hybrid", year:2024, price:45800000, category:"Everyday", type:"Sedan", condition:"Brand New" },
+    { id:20, brand:"Hyundai", model:"Tucson", year:2024, price:32800000, category:"Everyday", type:"SUV", condition:"Brand New" },
+    { id:21, brand:"Kia", model:"Sportage", year:2024, price:34500000, category:"Everyday", type:"SUV", condition:"Brand New" },
+    { id:22, brand:"Hyundai", model:"Santa Fe", year:2025, price:49800000, category:"Everyday", type:"SUV", condition:"Brand New" },
+    { id:23, brand:"Kia", model:"Carnival", year:2024, price:46500000, category:"Everyday", type:"MPV", condition:"Brand New" },
+    { id:24, brand:"Hyundai", model:"Grandeur", year:2024, price:52500000, category:"Everyday", type:"Sedan", condition:"Brand New" },
+    { id:25, brand:"Toyota", model:"RAV4 Hybrid", year:2024, price:41800000, category:"Everyday", type:"SUV", condition:"Brand New" }
 ];
 
+// State variables
 let currentCategory = "all";
 
-function displayVehicles(vehicles) {
+// Function to display vehicles
+function displayVehicles(vehiclesToShow) {
     const container = document.getElementById('carsContainer');
-    container.innerHTML = vehicles.map(car => {
+    const carCountSpan = document.getElementById('carCount');
+    
+    if (vehiclesToShow.length === 0) {
+        container.innerHTML = `<div style="text-align:center; padding:3rem; color:#888;"><i class="fas fa-search"></i> No vehicles found. Try changing filters.</div>`;
+        carCountSpan.innerText = '0';
+        return;
+    }
+    
+    container.innerHTML = vehiclesToShow.map(car => {
         let icon = "🚗";
         if (car.category === "Supercar") icon = "🏎️";
         else if (car.category === "Luxury") icon = "👑";
         else if (car.category === "Premium") icon = "⭐";
         
         return `
-            <div class="car-card" onclick="alert('${car.brand} ${car.model}\\nYear: ${car.year}\\nPrice: ₩${car.price.toLocaleString()}\\nCondition: ${car.condition}\\n\\nContact us for export details!')">
+            <div class="car-card" onclick="alert('${car.brand} ${car.model}\\nYear: ${car.year}\\nPrice: ₩${car.price.toLocaleString()}\\nCondition: ${car.condition}\\n\\nContact us for export details!\\nWhatsApp: +82 10 8343 4464')">
                 <div class="car-img">${icon}</div>
                 <div class="car-body">
                     <div class="car-brand">${car.category} · ${car.type}</div>
                     <div class="car-name">${car.model}</div>
                     <div class="car-meta"><i class="far fa-calendar-alt"></i> ${car.year} · ${car.brand}</div>
                     <div class="car-price">₩${car.price.toLocaleString()}</div>
-                    <div class="car-badge"><i class="fas fa-${car.condition === 'Brand New' ? 'factory' : 'check-circle'}"></i> ${car.condition} · Ready</div>
+                    <div class="car-badge"><i class="fas fa-${car.condition === 'Brand New' ? 'factory' : 'check-circle'}"></i> ${car.condition}</div>
                 </div>
             </div>
         `;
     }).join('');
-    document.getElementById('carCount').innerText = vehicles.length;
+    
+    carCountSpan.innerText = vehiclesToShow.length;
 }
 
-function filterVehicles() {
+// Filter function
+function filterAndDisplay() {
     const brand = document.getElementById('brandFilter').value;
     const yearFrom = parseInt(document.getElementById('yearFrom').value) || 2000;
     const yearTo = parseInt(document.getElementById('yearTo').value) || 2025;
     const priceTo = parseInt(document.getElementById('priceTo').value) || 9999999999;
     
-    let filtered = allVehicles.filter(car => {
+    let filtered = vehicles.filter(car => {
+        // Category filter
         if (currentCategory !== "all" && car.category !== currentCategory) return false;
+        // Brand filter
         if (brand !== "all" && car.brand !== brand) return false;
+        // Year range
         if (car.year < yearFrom || car.year > yearTo) return false;
+        // Price
         if (car.price > priceTo) return false;
         return true;
     });
@@ -668,50 +675,64 @@ function filterVehicles() {
     displayVehicles(filtered);
 }
 
-function applyFilters() {
-    filterVehicles();
-}
-
+// Reset all filters
 function resetFilters() {
     document.getElementById('brandFilter').value = 'all';
     document.getElementById('yearFrom').value = '2020';
     document.getElementById('yearTo').value = '2025';
     document.getElementById('priceTo').value = '900000000';
-    filterVehicles();
+    filterAndDisplay();
 }
 
 // Category switching
+function setCategory(category) {
+    currentCategory = category;
+    
+    // Update active state on category buttons
+    document.querySelectorAll('.cat-btn').forEach(btn => {
+        if (btn.getAttribute('data-cat') === category) {
+            btn.classList.add('active');
+        } else {
+            btn.classList.remove('active');
+        }
+    });
+    
+    filterAndDisplay();
+}
+
+// ==================== EVENT LISTENERS ====================
+document.getElementById('searchBtn').addEventListener('click', filterAndDisplay);
+document.getElementById('resetBtn').addEventListener('click', resetFilters);
+
+// Category buttons
 document.querySelectorAll('.cat-btn').forEach(btn => {
     btn.addEventListener('click', () => {
-        document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        currentCategory = btn.getAttribute('data-cat');
-        filterVehicles();
+        setCategory(btn.getAttribute('data-cat'));
     });
 });
 
-// Navbar category links
+// Navbar links
 document.querySelectorAll('.nav-links a').forEach(link => {
     const cat = link.getAttribute('data-cat');
     if (cat) {
         link.addEventListener('click', (e) => {
             e.preventDefault();
-            currentCategory = cat;
-            document.querySelectorAll('.cat-btn').forEach(btn => {
-                if (btn.getAttribute('data-cat') === cat) {
-                    btn.classList.add('active');
-                } else {
-                    btn.classList.remove('active');
-                }
-            });
-            filterVehicles();
+            setCategory(cat);
             document.getElementById('inventory').scrollIntoView({ behavior: 'smooth' });
         });
     }
 });
 
+// Enter key support for filters
+const filterInputs = ['brandFilter', 'yearFrom', 'yearTo', 'priceTo'];
+filterInputs.forEach(id => {
+    document.getElementById(id).addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') filterAndDisplay();
+    });
+});
+
 // Initial load
-displayVehicles(allVehicles);
+displayVehicles(vehicles);
 </script>
 </body>
 </html>

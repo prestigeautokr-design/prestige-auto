@@ -319,6 +319,9 @@ tr:hover td{background:rgba(255,255,255,0.02)}
         <a onclick="showPage('add-car')" id="nav-add">
           <i class="fas fa-plus-circle"></i> Add Car
         </a>
+        <a onclick="showPage('carapis')" id="nav-carapis">
+          <i class="fas fa-search"></i> Carapis Search
+        </a>
         <a onclick="showPage('users')" id="nav-users" style="display:none">
           <i class="fas fa-users"></i> Admin Users
         </a>
@@ -535,6 +538,66 @@ tr:hover td{background:rgba(255,255,255,0.02)}
         </div>
       </div>
 
+
+      <!-- CARAPIS SEARCH -->
+      <div id="page-carapis" style="display:none">
+        <div class="topbar">
+          <h1 class="page-title">Carapis <span>Search</span></h1>
+        </div>
+        <div class="panel">
+          <div class="panel-header">
+            <span class="panel-title">Search Vehicles from Carapis</span>
+          </div>
+          <div class="panel-body">
+            <div class="form-row">
+              <div class="f-group">
+                <label class="f-label">Brand</label>
+                <input class="f-input" id="cp-brand" placeholder="e.g. Genesis, BMW, Hyundai...">
+              </div>
+              <div class="f-group">
+                <label class="f-label">Model</label>
+                <input class="f-input" id="cp-model" placeholder="e.g. G80, Tucson...">
+              </div>
+              <div class="f-group">
+                <label class="f-label">Year From</label>
+                <input class="f-input" id="cp-year-from" type="number" placeholder="2020">
+              </div>
+              <div class="f-group">
+                <label class="f-label">Year To</label>
+                <input class="f-input" id="cp-year-to" type="number" placeholder="2025">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="f-group">
+                <label class="f-label">Price From ($)</label>
+                <input class="f-input" id="cp-price-from" type="number" placeholder="10000">
+              </div>
+              <div class="f-group">
+                <label class="f-label">Price To ($)</label>
+                <input class="f-input" id="cp-price-to" type="number" placeholder="100000">
+              </div>
+              <div class="f-group">
+                <label class="f-label">Mileage From (km)</label>
+                <input class="f-input" id="cp-mil-from" type="number" placeholder="0">
+              </div>
+              <div class="f-group">
+                <label class="f-label">Mileage To (km)</label>
+                <input class="f-input" id="cp-mil-to" type="number" placeholder="100000">
+              </div>
+            </div>
+            <div style="display:flex;gap:10px;margin-top:0.5rem">
+              <button class="btn btn-primary" onclick="searchCarapis()"><i class="fas fa-search"></i> Search Carapis</button>
+              <button class="btn btn-secondary" onclick="clearCarapis()">Clear</button>
+            </div>
+            <div id="cp-loading" style="display:none;margin-top:1.5rem;color:var(--gold);font-size:0.85rem;letter-spacing:0.1em">
+              <i class="fas fa-spinner fa-spin"></i> Searching Carapis...
+            </div>
+            <div id="cp-error" style="display:none;margin-top:1rem;color:#e74c3c;font-size:0.85rem"></div>
+            <div id="cp-results" style="margin-top:1.5rem"></div>
+          </div>
+        </div>
+      </div>
+
       <!-- ADMIN USERS -->
       <div id="page-users" style="display:none">
         <div class="topbar">
@@ -678,7 +741,7 @@ function showAdmin(){
 
 // ══ PAGES ══
 function showPage(page){
-  ['dashboard','cars','add-car','users'].forEach(p=>{
+  ['dashboard','cars','add-car','carapis','users'].forEach(p=>{
     const el=document.getElementById('page-'+p);
     if(el)el.style.display=p===page?'block':'none';
     const nav=document.getElementById('nav-'+p.replace('-car','').replace('add','add'));
@@ -688,6 +751,7 @@ function showPage(page){
   document.getElementById('nav-dashboard').classList.toggle('active',page==='dashboard');
   document.getElementById('nav-cars').classList.toggle('active',page==='cars');
   document.getElementById('nav-add').classList.toggle('active',page==='add-car');
+  document.getElementById('nav-carapis').classList.toggle('active',page==='carapis');
   if(document.getElementById('nav-users'))
     document.getElementById('nav-users').classList.toggle('active',page==='users');
 
@@ -941,6 +1005,135 @@ function showNotif(msg,type='success'){
   const el=document.getElementById('notif');
   el.textContent=msg; el.className='notif notif-'+type+' show';
   setTimeout(()=>el.classList.remove('show'),3000);
+}
+
+
+// ══ CARAPIS SEARCH ══
+const CARAPIS_KEY = 'YOUR_API_KEY_HERE';
+
+async function searchCarapis(){
+  const brand = document.getElementById('cp-brand').value.trim();
+  const model = document.getElementById('cp-model').value.trim();
+  const yearFrom = document.getElementById('cp-year-from').value;
+  const yearTo = document.getElementById('cp-year-to').value;
+  const priceFrom = document.getElementById('cp-price-from').value;
+  const priceTo = document.getElementById('cp-price-to').value;
+  const milFrom = document.getElementById('cp-mil-from').value;
+  const milTo = document.getElementById('cp-mil-to').value;
+
+  document.getElementById('cp-loading').style.display='block';
+  document.getElementById('cp-error').style.display='none';
+  document.getElementById('cp-results').innerHTML='';
+
+  let url = 'https://api.carapis.com/apix/catalog_api/vehicles/?page=1&page_size=10';
+  if(brand) url += '&brand='+encodeURIComponent(brand);
+  if(model) url += '&model='+encodeURIComponent(model);
+  if(yearFrom) url += '&year_from='+yearFrom;
+  if(yearTo) url += '&year_to='+yearTo;
+  if(priceFrom) url += '&price_from='+priceFrom;
+  if(priceTo) url += '&price_to='+priceTo;
+  if(milFrom) url += '&mileage_from='+milFrom;
+  if(milTo) url += '&mileage_to='+milTo;
+
+  try {
+    const resp = await fetch(url, {
+      headers: {
+        'Authorization': 'Bearer ' + CARAPIS_KEY,
+        'Content-Type': 'application/json'
+      }
+    });
+    const data = await resp.json();
+    document.getElementById('cp-loading').style.display='none';
+
+    if(!resp.ok){
+      document.getElementById('cp-error').style.display='block';
+      document.getElementById('cp-error').textContent = 'Error: ' + (data.detail || 'API error');
+      return;
+    }
+
+    const vehicles = data.results || data.vehicles || data || [];
+    if(!vehicles.length){
+      document.getElementById('cp-results').innerHTML = '<div class="empty-table">No vehicles found. Try different filters.</div>';
+      return;
+    }
+    renderCarapisResults(vehicles);
+  } catch(e){
+    document.getElementById('cp-loading').style.display='none';
+    document.getElementById('cp-error').style.display='block';
+    document.getElementById('cp-error').textContent = 'Connection error. Check API key and try again.';
+  }
+}
+
+function renderCarapisResults(vehicles){
+  const el = document.getElementById('cp-results');
+  el.innerHTML = `
+    <div style="font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem">${vehicles.length} results found</div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr>
+          <th>Vehicle</th><th>Year</th><th>Price</th><th>Mileage</th><th>Source</th><th>Action</th>
+        </tr></thead>
+        <tbody>
+          ${vehicles.map(v=>`
+            <tr>
+              <td><div class="td-brand">${v.brand||v.make||''}</div><div class="td-name">${v.model||''} ${v.trim||''}</div></td>
+              <td>${v.year||'—'}</td>
+              <td>${v.price ? '$'+Number(v.price).toLocaleString() : '—'}</td>
+              <td>${v.mileage ? Number(v.mileage).toLocaleString()+' km' : '—'}</td>
+              <td>${v.source||v.dealer||'Carapis'}</td>
+              <td><button class="btn btn-primary btn-sm" onclick='addFromCarapis(${JSON.stringify(v).replace(/'/g,"&#39;")})'>+ Add to Catalog</button></td>
+            </tr>
+          `).join('')}
+        </tbody>
+      </table>
+    </div>
+  `;
+}
+
+function addFromCarapis(v){
+  const car = {
+    id: 'c'+Date.now(),
+    brand: v.brand || v.make || '',
+    model: v.model || '',
+    year: v.year || new Date().getFullYear(),
+    type: detectType(v.body_type || v.type || ''),
+    krw: v.price ? Math.round(v.price / 0.00075) : 0,
+    mileage: v.mileage || 0,
+    engine: v.engine || v.displacement || '',
+    fuel: v.fuel_type || v.fuel || 'Gasoline',
+    trans: v.transmission || 'Auto',
+    color: v.color || v.exterior_color || '',
+    drive: v.drive_type || v.drivetrain || 'FWD',
+    src: '🇰🇷 Carapis',
+    encar: v.url || v.listing_url || '',
+    desc: v.description || '',
+    active: true,
+    addedBy: currentUser ? currentUser.id : 'admin',
+    addedAt: new Date().toISOString().split('T')[0]
+  };
+  let cars = STORE.get('cars') || [];
+  cars.push(car);
+  STORE.set('cars', cars);
+  showNotif('✅ ' + car.brand + ' ' + car.model + ' added to catalog!', 'success');
+  updateDashStats();
+}
+
+function detectType(bodyType){
+  const t = (bodyType||'').toLowerCase();
+  if(t.includes('suv')||t.includes('crossover')||t.includes('4wd')) return 'suv';
+  if(t.includes('sedan')||t.includes('saloon')) return 'sedan';
+  if(t.includes('electric')||t.includes('ev')) return 'electric';
+  if(t.includes('hybrid')) return 'hybrid';
+  if(t.includes('luxury')||t.includes('premium')) return 'luxury';
+  return 'sedan';
+}
+
+function clearCarapis(){
+  ['cp-brand','cp-model','cp-year-from','cp-year-to','cp-price-from','cp-price-to','cp-mil-from','cp-mil-to'].forEach(id=>{
+    document.getElementById(id).value='';
+  });
+  document.getElementById('cp-results').innerHTML='';
+  document.getElementById('cp-error').style.display='none';
 }
 
 // ══ INIT ══

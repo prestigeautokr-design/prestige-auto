@@ -1009,7 +1009,7 @@ function showNotif(msg,type='success'){
 
 
 // ══ CARAPIS SEARCH ══
-const CARAPIS_KEY = 'car_qX5K5CpFEeQteqFWhudgftmtexQndmvB3xbiM_nqc2E';
+const CARAPIS_KEY = 'https://api.carapis.com/apix/catalog_api/vehicles/?page=1&page_size=20&available_only=false';
 
 async function searchCarapis(){
   const brand = document.getElementById('cp-brand').value.trim();
@@ -1036,11 +1036,15 @@ async function searchCarapis(){
   if(milTo) url += '&mileage_to='+milTo;
 
   try {
+    // Add API key as query parameter
+    url += '&api_key=' + CARAPIS_KEY;
+    
     const resp = await fetch(url, {
+      method: 'GET',
       headers: {
-        'Authorization': 'Bearer ' + CARAPIS_KEY,
-        'Content-Type': 'application/json'
-      }
+        'Accept': 'application/json',
+      },
+      mode: 'cors'
     });
     const data = await resp.json();
     document.getElementById('cp-loading').style.display='none';

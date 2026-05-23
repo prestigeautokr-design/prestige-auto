@@ -1009,7 +1009,7 @@ function showNotif(msg,type='success'){
 
 
 // ══ CARAPIS SEARCH ══
-const CARAPIS_KEY = 'https://api.carapis.com/apix/catalog_api/vehicles/?page=1&page_size=20&available_only=false';
+const CARAPIS_KEY = 'car_qX5K5CpFEeQteqFWhudgftmtexQndmvB3xbiM_nqc2E';
 
 async function searchCarapis(){
   const brand = document.getElementById('cp-brand').value.trim();
@@ -1025,67 +1025,74 @@ async function searchCarapis(){
   document.getElementById('cp-error').style.display='none';
   document.getElementById('cp-results').innerHTML='';
 
-  let url = 'https://api.carapis.com/apix/catalog_api/vehicles/?page=1&page_size=10';
-  if(brand) url += '&brand='+encodeURIComponent(brand);
-  if(model) url += '&model='+encodeURIComponent(model);
-  if(yearFrom) url += '&year_from='+yearFrom;
-  if(yearTo) url += '&year_to='+yearTo;
-  if(priceFrom) url += '&price_from='+priceFrom;
-  if(priceTo) url += '&price_to='+priceTo;
-  if(milFrom) url += '&mileage_from='+milFrom;
-  if(milTo) url += '&mileage_to='+milTo;
+  // Build URL with correct Carapis params
+  let params = new URLSearchParams({
+    page: 1,
+    page_size: 10,
+    available_only: 'false'
+  });
+  if(brand) params.append('brand_slug', brand.toLowerCase());
+  if(model) params.append('model_slug', model.toLowerCase());
+  if(yearFrom) params.append('year_from', yearFrom);
+  if(yearTo) params.append('year_to', yearTo);
+  if(priceFrom) params.append('price_from', priceFrom);
+  if(priceTo) params.append('price_to', priceTo);
+  if(milFrom) params.append('mileage_from', milFrom);
+  if(milTo) params.append('mileage_to', milTo);
+
+  const url = 'https://api.carapis.com/apix/catalog_api/vehicles/?' + params.toString();
 
   try {
-    // Add API key as query parameter
-    url += '&api_key=' + CARAPIS_KEY;
-    
     const resp = await fetch(url, {
       method: 'GET',
       headers: {
+        'Authorization': 'Api-Key ' + CARAPIS_KEY,
         'Accept': 'application/json',
-      },
-      mode: 'cors'
+      }
     });
-    const data = await resp.json();
+
     document.getElementById('cp-loading').style.display='none';
 
     if(!resp.ok){
+      const err = await resp.json().catch(()=>({}));
       document.getElementById('cp-error').style.display='block';
-      document.getElementById('cp-error').textContent = 'Error: ' + (data.detail || 'API error');
+      document.getElementById('cp-error').textContent = 'API Error ' + resp.status + ': ' + (err.detail || err.message || 'Check API key');
       return;
     }
 
-    const vehicles = data.results || data.vehicles || data || [];
+    const data = await resp.json();
+    const vehicles = data.results || [];
+    
     if(!vehicles.length){
       document.getElementById('cp-results').innerHTML = '<div class="empty-table">No vehicles found. Try different filters.</div>';
       return;
     }
-    renderCarapisResults(vehicles);
+    renderCarapisResults(vehicles, data.count||0);
   } catch(e){
     document.getElementById('cp-loading').style.display='none';
     document.getElementById('cp-error').style.display='block';
-    document.getElementById('cp-error').textContent = 'Connection error. Check API key and try again.';
+    document.getElementById('cp-error').textContent = 'CORS Error: Carapis API does not allow direct browser requests. Use the manual "Add Car" instead.';
   }
 }
 
-function renderCarapisResults(vehicles){
+function renderCarapisResults(vehicles, total){
   const el = document.getElementById('cp-results');
   el.innerHTML = `
-    <div style="font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem">${vehicles.length} results found</div>
+    <div style="font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem">${total||vehicles.length} results found</div>
     <div class="table-wrap">
       <table>
         <thead><tr>
-          <th>Vehicle</th><th>Year</th><th>Price</th><th>Mileage</th><th>Source</th><th>Action</th>
+          <th>Vehicle</th><th>Year</th><th>Price</th><th>Mileage</th><th>Fuel</th><th>Action</th>
         </tr></thead>
         <tbody>
           ${vehicles.map(v=>`
             <tr>
-              <td><div class="td-brand">${v.brand||v.make||''}</div><div class="td-name">${v.model||''} ${v.trim||''}</div></td>
+              <td><div class="td-brand">${v.brand_name||''}</div><div class="td-name">${v.model_name||''} ${v.trim||''}</div></td>
               <td>${v.year||'—'}</td>
-              <td>${v.price ? '$'+Number(v.price).toLocaleString() : '—'}</td>
+              <td>${v.price_usd ? '$'+Number(v.price_usd).toLocaleString() : '—'}</td>
               <td>${v.mileage ? Number(v.mileage).toLocaleString()+' km' : '—'}</td>
-              <td>${v.source||v.dealer||'Carapis'}</td>
-              <td><button class="btn btn-primary btn-sm" onclick='addFromCarapis(${JSON.stringify(v).replace(/'/g,"&#39;")})'>+ Add to Catalog</button></td>
+              <td>${v.fuel_type||'—'}</td>
+              <td><button class="btn btn-primary btn-sm" onclick='addFromCarapis(${JSON.stringify(v).replace(/'/g,"&#39;").replace(/`/g,"&#96;")})'>+ Add</button></td>
             </tr>
           `).join('')}
         </tbody>
@@ -1097,20 +1104,20 @@ function renderCarapisResults(vehicles){
 function addFromCarapis(v){
   const car = {
     id: 'c'+Date.now(),
-    brand: v.brand || v.make || '',
-    model: v.model || '',
+    brand: v.brand_name || '',
+    model: v.model_name || '',
     year: v.year || new Date().getFullYear(),
-    type: detectType(v.body_type || v.type || ''),
-    krw: v.price ? Math.round(v.price / 0.00075) : 0,
+    type: detectType(v.body_type || v.category || ''),
+    krw: v.price_usd ? Math.round(v.price_usd / 0.00075) : 0,
     mileage: v.mileage || 0,
-    engine: v.engine || v.displacement || '',
-    fuel: v.fuel_type || v.fuel || 'Gasoline',
+    engine: v.engine_volume ? v.engine_volume+'L' : '',
+    fuel: v.fuel_type || 'Gasoline',
     trans: v.transmission || 'Auto',
-    color: v.color || v.exterior_color || '',
-    drive: v.drive_type || v.drivetrain || 'FWD',
+    color: v.color || '',
+    drive: v.drive_type || 'FWD',
     src: '🇰🇷 Carapis',
-    encar: v.url || v.listing_url || '',
-    desc: v.description || '',
+    encar: v.source_url || '',
+    desc: '',
     active: true,
     addedBy: currentUser ? currentUser.id : 'admin',
     addedAt: new Date().toISOString().split('T')[0]

@@ -412,6 +412,43 @@ footer{background:var(--black);color:white;padding:4rem 3rem 2.5rem}
   </div>
 </div>
 
+<!-- VIDEO SECTION -->
+<section style="background:#0A0A0A;padding:5rem 3rem;border-top:1px solid rgba(255,255,255,0.05)">
+  <div style="max-width:1200px;margin:0 auto">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:2.5rem;flex-wrap:wrap;gap:1rem">
+      <div>
+        <div class="sec-tag" id="vid-tag">Follow Our Journey</div>
+        <h2 class="sec-title" style="color:white" id="vid-title">Latest Videos</h2>
+      </div>
+      <div style="display:flex;gap:16px">
+        <a href="https://www.instagram.com/prestigeauto_kr" target="_blank" style="color:rgba(255,255,255,0.4);font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;transition:color 0.2s;display:flex;align-items:center;gap:6px" onmouseover="this.style.color='#C9A84C'" onmouseout="this.style.color='rgba(255,255,255,0.4)'">📸 Instagram</a>
+        <a href="https://www.youtube.com/@PrestigeAutoKr" target="_blank" style="color:rgba(255,255,255,0.4);font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;transition:color 0.2s;display:flex;align-items:center;gap:6px" onmouseover="this.style.color='#C9A84C'" onmouseout="this.style.color='rgba(255,255,255,0.4)'">▶ YouTube</a>
+        <a href="https://www.tiktok.com/@prestigeauto_kr" target="_blank" style="color:rgba(255,255,255,0.4);font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;transition:color 0.2s;display:flex;align-items:center;gap:6px" onmouseover="this.style.color='#C9A84C'" onmouseout="this.style.color='rgba(255,255,255,0.4)'">♪ TikTok</a>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px">
+      <a href="https://www.instagram.com/prestigeauto_kr" target="_blank" style="text-decoration:none;display:block;background:#161616;border:1px solid rgba(201,168,76,0.1);overflow:hidden;transition:border-color 0.3s" onmouseover="this.style.borderColor='rgba(201,168,76,0.4)'" onmouseout="this.style.borderColor='rgba(201,168,76,0.1)'">
+        <div style="width:100%;aspect-ratio:16/9;background:linear-gradient(135deg,#0e0e0e,#1a1a1a);display:flex;align-items:center;justify-content:center">
+          <div style="width:52px;height:52px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem">▶</div>
+        </div>
+        <div style="padding:14px 16px"><div style="font-size:0.85rem;font-weight:600;color:white;margin-bottom:3px">Genesis G90 2024 — Export Ready</div><div style="font-size:0.72rem;color:#555;text-transform:uppercase;letter-spacing:0.08em">Instagram · @prestigeauto_kr</div></div>
+      </a>
+      <a href="https://www.youtube.com/@PrestigeAutoKr" target="_blank" style="text-decoration:none;display:block;background:#161616;border:1px solid rgba(201,168,76,0.1);overflow:hidden;transition:border-color 0.3s" onmouseover="this.style.borderColor='rgba(201,168,76,0.4)'" onmouseout="this.style.borderColor='rgba(201,168,76,0.1)'">
+        <div style="width:100%;aspect-ratio:16/9;background:linear-gradient(135deg,#0e0e0e,#1a1a1a);display:flex;align-items:center;justify-content:center">
+          <div style="width:52px;height:52px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem">▶</div>
+        </div>
+        <div style="padding:14px 16px"><div style="font-size:0.85rem;font-weight:600;color:white;margin-bottom:3px">Lexus LX 600 — Full Walkaround</div><div style="font-size:0.72rem;color:#555;text-transform:uppercase;letter-spacing:0.08em">YouTube · @PrestigeAutoKr</div></div>
+      </a>
+      <a href="https://www.tiktok.com/@prestigeauto_kr" target="_blank" style="text-decoration:none;display:block;background:#161616;border:1px solid rgba(201,168,76,0.1);overflow:hidden;transition:border-color 0.3s" onmouseover="this.style.borderColor='rgba(201,168,76,0.4)'" onmouseout="this.style.borderColor='rgba(201,168,76,0.1)'">
+        <div style="width:100%;aspect-ratio:16/9;background:linear-gradient(135deg,#0e0e0e,#1a1a1a);display:flex;align-items:center;justify-content:center">
+          <div style="width:52px;height:52px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem">▶</div>
+        </div>
+        <div style="padding:14px 16px"><div style="font-size:0.85rem;font-weight:600;color:white;margin-bottom:3px">Porsche Cayenne — Shipping Day</div><div style="font-size:0.72rem;color:#555;text-transform:uppercase;letter-spacing:0.08em">TikTok · @prestigeauto_kr</div></div>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section class="contact-sec" id="contact">
   <div class="contact-inner">
@@ -614,17 +651,51 @@ const TR={
 };
 function T(k){return(TR[lang]||TR.en)[k]||(TR.en[k])||k}
 
-// ══ CARS DATA ══
-const CARS=[
-  {id:1,brand:'Mercedes-Benz',model:'E-Class 300',year:2024,type:'sedan',krw:78000000,mileage:8200,engine:'2.0T',fuel:'Gasoline',trans:'Auto 9',color:'Black',drive:'RWD',abbr:'MBZ',src:'🇰🇷 Encar',bg:'linear-gradient(145deg,#EDEBE5,#D8D4CC)',encar:'https://www.encar.com'},
-  {id:2,brand:'Lexus',model:'LX 600',year:2024,type:'suv',krw:125000000,mileage:12000,engine:'3.5T',fuel:'Gasoline',trans:'Auto 10',color:'White',drive:'4WD',abbr:'LX6',src:'🇯🇵 Hey Dealer',bg:'linear-gradient(145deg,#E0E0D8,#CACABE)',encar:'https://www.heydealer.com'},
-  {id:3,brand:'Genesis',model:'G90',year:2024,type:'luxury',krw:95000000,mileage:4500,engine:'3.5T',fuel:'Gasoline',trans:'Auto 8',color:'Silver',drive:'AWD',abbr:'G90',src:'🇰🇷 KB CCC',bg:'linear-gradient(145deg,#E8E2D8,#D6CFC2)',encar:'https://www.kbchachacha.com'},
-  {id:4,brand:'BMW',model:'7 Series 740i',year:2023,type:'luxury',krw:89000000,mileage:15000,engine:'3.0T',fuel:'Gasoline',trans:'Auto 8',color:'Black',drive:'RWD',abbr:'BMW',src:'🇰🇷 Encar',bg:'linear-gradient(145deg,#E5E3DC,#D2CFCA)',encar:'https://www.encar.com'},
-  {id:5,brand:'Toyota',model:'Land Cruiser 300',year:2024,type:'suv',krw:110000000,mileage:6000,engine:'3.5T',fuel:'Gasoline',trans:'Auto 10',color:'White',drive:'4WD',abbr:'LC3',src:'🇯🇵 Hey Dealer',bg:'linear-gradient(145deg,#E2E0D9,#CECCC4)',encar:'https://www.heydealer.com'},
-  {id:6,brand:'Porsche',model:'Cayenne S',year:2024,type:'luxury',krw:142000000,mileage:9200,engine:'2.9T',fuel:'Gasoline',trans:'PDK 8',color:'Grey',drive:'AWD',abbr:'PCY',src:'🇰🇷 KB CCC',bg:'linear-gradient(145deg,#E6E1D5,#D5CEBC)',encar:'https://www.kbchachacha.com'},
-  {id:7,brand:'Kia',model:'EV6 GT',year:2023,type:'electric',krw:62000000,mileage:8000,engine:'77.4 kWh',fuel:'Electric',trans:'Single Speed',color:'Moonscape',drive:'AWD',abbr:'EV6',src:'🇰🇷 Encar',bg:'linear-gradient(145deg,#DDE4EC,#C8D4E0)',encar:'https://www.encar.com'},
-  {id:8,brand:'Genesis',model:'GV80',year:2023,type:'luxury',krw:72000000,mileage:19000,engine:'2.5T',fuel:'Gasoline',trans:'Auto 8',color:'Savile Silver',drive:'AWD',abbr:'GV8',src:'🇰🇷 Encar',bg:'linear-gradient(145deg,#E8E6E0,#D5D2CB)',encar:'https://www.encar.com'},
+// ══ CARS DATA — loads from admin localStorage ══
+const BG_COLORS=[
+  'linear-gradient(145deg,#EDEBE5,#D8D4CC)',
+  'linear-gradient(145deg,#E0E0D8,#CACABE)',
+  'linear-gradient(145deg,#E8E2D8,#D6CFC2)',
+  'linear-gradient(145deg,#E5E3DC,#D2CFCA)',
+  'linear-gradient(145deg,#E2E0D9,#CECCC4)',
+  'linear-gradient(145deg,#E6E1D5,#D5CEBC)',
+  'linear-gradient(145deg,#DDE4EC,#C8D4E0)',
+  'linear-gradient(145deg,#E8E6E0,#D5D2CB)',
+  'linear-gradient(145deg,#E4E0D8,#D0CBC0)',
+  'linear-gradient(145deg,#DFE8E0,#C8D5CA)',
 ];
+function getAbbr(brand,model){
+  const b=(brand||'').replace(/[^A-Za-z]/g,'').substring(0,3).toUpperCase();
+  const m=(model||'').replace(/[^A-Za-z0-9]/g,'').substring(0,3).toUpperCase();
+  return b||m||'CAR';
+}
+function loadCars(){
+  try{
+    const stored=localStorage.getItem('pak_cars');
+    if(stored){
+      const cars=JSON.parse(stored);
+      return cars
+        .filter(c=>c.active!==false)
+        .map((c,i)=>({
+          ...c,
+          abbr: getAbbr(c.brand,c.model),
+          bg: BG_COLORS[i%BG_COLORS.length],
+        }));
+    }
+  }catch(e){}
+  // Default fallback
+  return [
+    {id:'c1',brand:'Mercedes-Benz',model:'E-Class 300',year:2024,type:'sedan',krw:78000000,mileage:8200,engine:'2.0T',fuel:'Gasoline',trans:'Auto 9',color:'Black',drive:'RWD',src:'🇰🇷 Encar',encar:'https://www.encar.com',abbr:'MBZ',bg:BG_COLORS[0]},
+    {id:'c2',brand:'Lexus',model:'LX 600',year:2024,type:'suv',krw:125000000,mileage:12000,engine:'3.5T',fuel:'Gasoline',trans:'Auto 10',color:'White',drive:'4WD',src:'🇯🇵 Hey Dealer',encar:'https://www.heydealer.com',abbr:'LX6',bg:BG_COLORS[1]},
+    {id:'c3',brand:'Genesis',model:'G90',year:2024,type:'luxury',krw:95000000,mileage:4500,engine:'3.5T',fuel:'Gasoline',trans:'Auto 8',color:'Silver',drive:'AWD',src:'🇰🇷 KB CCC',encar:'https://www.kbchachacha.com',abbr:'G90',bg:BG_COLORS[2]},
+    {id:'c4',brand:'BMW',model:'7 Series 740i',year:2023,type:'luxury',krw:89000000,mileage:15000,engine:'3.0T',fuel:'Gasoline',trans:'Auto 8',color:'Black',drive:'RWD',src:'🇰🇷 Encar',encar:'https://www.encar.com',abbr:'BMW',bg:BG_COLORS[3]},
+    {id:'c5',brand:'Toyota',model:'Land Cruiser 300',year:2024,type:'suv',krw:110000000,mileage:6000,engine:'3.5T',fuel:'Gasoline',trans:'Auto 10',color:'White',drive:'4WD',src:'🇯🇵 Hey Dealer',encar:'https://www.heydealer.com',abbr:'LC3',bg:BG_COLORS[4]},
+    {id:'c6',brand:'Porsche',model:'Cayenne S',year:2024,type:'luxury',krw:142000000,mileage:9200,engine:'2.9T',fuel:'Gasoline',trans:'PDK 8',color:'Grey',drive:'AWD',src:'🇰🇷 KB CCC',encar:'https://www.kbchachacha.com',abbr:'PCY',bg:BG_COLORS[5]},
+    {id:'c7',brand:'Kia',model:'EV6 GT',year:2023,type:'electric',krw:62000000,mileage:8000,engine:'77.4 kWh',fuel:'Electric',trans:'Single Speed',color:'Moonscape',drive:'AWD',src:'🇰🇷 Encar',encar:'https://www.encar.com',abbr:'EV6',bg:BG_COLORS[6]},
+    {id:'c8',brand:'Genesis',model:'GV80',year:2023,type:'luxury',krw:72000000,mileage:19000,engine:'2.5T',fuel:'Gasoline',trans:'Auto 8',color:'Savile Silver',drive:'AWD',src:'🇰🇷 Encar',encar:'https://www.encar.com',abbr:'GV8',bg:BG_COLORS[7]},
+  ];
+}
+let CARS = loadCars();
 
 // ══ SEARCH STATE ══
 let searchState={brand:'',model:'',year:'',type:'all'};
@@ -743,6 +814,8 @@ function doSearch(){
 }
 
 function applySearch(){
+  // Reload from localStorage every time
+  CARS = loadCars();
   const{brand,model,year,type}=searchState;
   const hasSearch=brand||model||year||(type&&type!=='all');
   const filtered=CARS.filter(c=>{

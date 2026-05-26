@@ -731,15 +731,95 @@ function showFormAlert(msg,type){
 
 // ══ ENCAR SEARCH FUNCTIONS ══
 function openEncar(brand){
-  const url=`https://www.encar.com/fc/fc_carsearchlist.do?carType=A&searchType=model&brand=${brand}`;
-  window.open(url,'_blank');
+  document.getElementById('qi-brand').value=brand;
+  searchEncar();
 }
 
 function openEncarSearch(){
   const text=document.getElementById('en-search-text').value.trim();
   if(!text){showNotif('Brand yoki model kiriting','error');return;}
-  const url=`https://www.encar.com/fc/fc_carsearchlist.do?carType=A&searchType=model&brand=${encodeURIComponent(text)}`;
-  window.open(url,'_blank');
+  document.getElementById('qi-brand').value=text;
+  searchEncar();
+}
+
+async function searchEncar(){
+  const brand=document.getElementById('qi-brand').value.trim();
+  const model=document.getElementById('qi-model').value.trim();
+  const year=document.getElementById('qi-year').value.trim();
+
+  if(!brand){showNotif('Brand kiriting','error');return;}
+
+  const resultsEl=document.getElementById('encarResults');
+  resultsEl.style.display='block';
+  resultsEl.innerHTML='<div style="color:var(--gold);font-size:0.82rem;padding:1rem"><i class="fas fa-spinner fa-spin"></i> Encar dan qidirilmoqda...</div>';
+
+  try{
+    let params=new URLSearchParams({action:'search'});
+    if(brand)params.append('brand',brand);
+    if(model)params.append('model',model);
+    if(year)params.append('year',year);
+
+    const resp=await fetch('/api/encar?'+params.toString());
+    const data=await resp.json();
+
+    if(data.error){
+      resultsEl.innerHTML=`<div style="color:#e74c3c;font-size:0.82rem;padding:1rem">Xato: ${data.error}</div>`;
+      return;
+    }
+
+    const cars=(data.SearchResults||data.results||[]).slice(0,10);
+    if(!cars.length){
+      resultsEl.innerHTML='<div style="color:var(--muted);font-size:0.82rem;padding:1rem">Mashina topilmadi. Boshqa brand kiriting.</div>';
+      return;
+    }
+
+    resultsEl.innerHTML=`
+      <div style="font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem">${cars.length} ta mashina topildi</div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Rasm</th><th>Brand / Model</th><th>Yil</th><th>Probeg</th><th>Narx</th><th>Amal</th></tr></thead>
+          <tbody>
+            ${cars.map(c=>{
+              const brand=c.Manufacturer||c.brand||'';
+              const model=c.Model||c.ModelGroup||c.model||'';
+              const year=c.Year||c.year||'';
+              const mileage=c.Mileage||c.mileage||0;
+              const price=c.Price||c.price||0;
+              const carid=c.CarNo||c.carid||'';
+              const imgUrl=c.Photos&&c.Photos[0]?`https://ci.encar.com${c.Photos[0].path}?w=400`:'';
+              const encarUrl=carid?`https://fem.encar.com/cars/detail/${carid}`:'';
+              return `<tr>
+                <td>${imgUrl?`<img src="${imgUrl}" style="width:60px;height:42px;object-fit:cover;border:1px solid rgba(255,255,255,0.1)" onerror="this.style.display='none'">`:'—'}</td>
+                <td><div style="font-size:0.65rem;color:var(--muted)">${brand}</div><div style="font-weight:600">${model}</div></td>
+                <td>${year}</td>
+                <td>${Number(mileage).toLocaleString()} km</td>
+                <td style="color:var(--gold);font-weight:600">₩${Number(price*10000).toLocaleString()}</td>
+                <td><button class="btn btn-primary btn-sm" onclick='fillFromEncar(${JSON.stringify({brand,model,year,mileage,price:price*10000,carid,imgUrl,encarUrl})})'>+ Import</button></td>
+              </tr>`;
+            }).join('')}
+          </tbody>
+        </table>
+      </div>`;
+  }catch(e){
+    resultsEl.innerHTML=`<div style="color:#e74c3c;font-size:0.82rem;padding:1rem">Serverless function ishlamayapti. GitHub da api/encar.js borligini tekshiring.</div>`;
+  }
+}
+
+function fillFromEncar(c){
+  document.getElementById('qi-brand').value=c.brand||'';
+  document.getElementById('qi-model').value=c.model||'';
+  document.getElementById('qi-year').value=c.year||'';
+  document.getElementById('qi-mileage').value=c.mileage||'';
+  document.getElementById('qi-krw').value=c.price||'';
+  document.getElementById('qi-image').value=c.imgUrl||'';
+  document.getElementById('qi-url').value=c.encarUrl||'';
+  updateUsdPreview();
+  if(c.imgUrl){
+    document.getElementById('imgPreviewWrap').style.display='block';
+    document.getElementById('imgPreview').src=c.imgUrl;
+  }
+  showNotif('Ma'lumotlar to'ldirildi! Type va boshqalarni to'ldiring.','success');
+  document.getElementById('qi-brand').scrollIntoView({behavior:'smooth'});
 }
 
 function updateUsdPreview(){

@@ -13,8 +13,6 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:var(--white);color:var(-
 body.lang-ko{font-family:'Noto Sans KR',sans-serif}
 body.lang-ar{font-family:'Noto Sans Arabic',sans-serif}
 a{text-decoration:none;color:inherit}
-
-/* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 3rem;background:rgba(250,250,248,0.97);border-bottom:1px solid rgba(201,168,76,0.2)}
 .logo{font-size:1.5rem;font-weight:700;letter-spacing:0.15em}
 .logo span{color:var(--gold)}
@@ -25,8 +23,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 select{font-size:0.85rem;border:1px solid rgba(201,168,76,0.4);background:transparent;padding:0.45rem 0.9rem;cursor:pointer;outline:none;font-family:inherit;color:black}
 .nav-cta{font-size:0.8rem;letter-spacing:0.12em;text-transform:uppercase;padding:0.7rem 1.6rem;background:var(--black);color:white;font-weight:600;cursor:pointer;border:none;font-family:inherit;transition:background 0.3s}
 .nav-cta:hover{background:var(--gold)}
-
-/* HERO */
 .hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;margin-top:58px}
 .hero-left{padding:5rem 3rem 3rem;display:flex;flex-direction:column;justify-content:center}
 .hero-tag{font-size:0.8rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem;font-weight:600}
@@ -46,16 +42,12 @@ select{font-size:0.85rem;border:1px solid rgba(201,168,76,0.4);background:transp
 .hero-badge-tag{font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted)}
 .hero-badge-name{font-size:1.2rem;font-weight:600;margin-top:0.3rem;color:black}
 .hero-badge-price{font-size:0.9rem;color:var(--gold);font-weight:600;margin-top:0.2rem}
-
-/* PLATFORMS */
 .platforms{background:var(--black);padding:1.2rem 3rem;display:flex;align-items:center;flex-wrap:wrap;gap:0.5rem}
 .plat-lbl{font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-right:2rem;white-space:nowrap}
 .plat-links{display:flex;flex-wrap:wrap}
 .plat-link{font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.7);padding:0.6rem 2rem;border-right:1px solid rgba(255,255,255,0.1);transition:color 0.3s;font-weight:500}
 .plat-link:last-child{border-right:none}
 .plat-link:hover{color:var(--gold)}
-
-/* SEARCH */
 .search-sec{background:var(--gray);padding:3rem}
 .search-inner{max-width:900px;margin:0 auto}
 .search-lbl{font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:0.6rem;font-weight:600}
@@ -74,8 +66,6 @@ select{font-size:0.85rem;border:1px solid rgba(201,168,76,0.4);background:transp
 .results-bar.show{display:flex}
 .r-count{font-size:0.8rem;letter-spacing:0.1em;color:var(--muted);text-transform:uppercase}
 .r-clear{font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);background:none;border:none;cursor:pointer;font-family:inherit}
-
-/* CATALOG */
 .section{padding:5rem 3rem}
 .sec-tag{font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem;font-weight:600}
 .sec-title{font-size:3rem;font-weight:300;line-height:1.1;color:black}
@@ -83,7 +73,8 @@ select{font-size:0.85rem;border:1px solid rgba(201,168,76,0.4);background:transp
 .cars-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(0,0,0,0.06)}
 .car-card{background:white;transition:transform 0.3s;cursor:pointer}
 .car-card:hover{transform:translateY(-5px)}
-.car-thumb{width:100%;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;position:relative}
+.car-thumb{width:100%;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.car-img{width:100%;height:100%;object-fit:cover}
 .car-abbr{font-size:3.5rem;font-weight:300;color:rgba(0,0,0,0.08);letter-spacing:0.05em}
 .car-src{position:absolute;top:10px;left:10px;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;background:rgba(250,250,248,0.9);padding:4px 10px;color:var(--muted)}
 .car-body{padding:1.5rem 1.8rem}
@@ -94,8 +85,6 @@ select{font-size:0.85rem;border:1px solid rgba(201,168,76,0.4);background:transp
 .car-price{font-size:1rem;font-weight:700;color:black}
 .car-type-badge{font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;padding:0.35rem 0.85rem;border:1px solid rgba(201,168,76,0.4);color:var(--gold)}
 .empty-state{grid-column:1/-1;text-align:center;padding:5rem 0;color:var(--muted)}
-
-/* MODAL */
 .modal-overlay{position:fixed;inset:0;z-index:500;background:rgba(0,0,0,0.7);display:none;align-items:center;justify-content:center;padding:20px}
 .modal-overlay.open{display:flex}
 .modal{background:white;width:100%;max-width:640px;max-height:90vh;overflow-y:auto}
@@ -104,7 +93,8 @@ select{font-size:0.85rem;border:1px solid rgba(201,168,76,0.4);background:transp
 .modal-name{font-size:1.8rem;font-weight:300}
 .modal-close{background:none;border:1px solid rgba(0,0,0,0.15);width:36px;height:36px;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;transition:all 0.2s}
 .modal-close:hover{background:#8b1a1a;color:white;border-color:#8b1a1a}
-.modal-thumb{width:100%;height:220px;display:flex;align-items:center;justify-content:center}
+.modal-thumb{width:100%;height:220px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.modal-thumb img{width:100%;height:100%;object-fit:cover}
 .modal-body{padding:2rem}
 .modal-specs{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(0,0,0,0.06);margin-bottom:1.5rem}
 .mspec{background:white;padding:1rem;text-align:center}
@@ -117,8 +107,6 @@ select{font-size:0.85rem;border:1px solid rgba(201,168,76,0.4);background:transp
 .modal-btns a{flex:1;text-align:center;min-width:140px;display:flex;align-items:center;justify-content:center;padding:1rem 2rem;font-size:0.8rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:600;font-family:inherit;transition:all 0.3s}
 .modal-encar{font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,168,76,0.4);padding:0.6rem 1rem;text-decoration:none;transition:all 0.2s}
 .modal-encar:hover{background:var(--gold);color:white}
-
-/* CALCULATOR */
 .calc-sec{background:var(--black);padding:5rem 3rem;color:white}
 .calc-inner{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
 .calc-form{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);padding:2.5rem}
@@ -133,16 +121,12 @@ select{font-size:0.85rem;border:1px solid rgba(201,168,76,0.4);background:transp
 .c-total{display:flex;justify-content:space-between;margin-top:1.2rem;padding-top:1.2rem;border-top:1px solid rgba(201,168,76,0.2)}
 .c-tlbl{font-size:1.1rem;color:rgba(255,255,255,0.6)}
 .c-tval{font-size:1.8rem;color:var(--gold);font-weight:600}
-
-/* REVIEWS */
 .reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3rem}
 .rev-card{padding:2.2rem;border:1px solid rgba(0,0,0,0.08);background:white}
 .rev-stars{color:var(--gold);margin-bottom:1.2rem;font-size:1.1rem}
 .rev-text{font-size:1rem;line-height:1.7;margin-bottom:1.8rem;font-style:italic;color:black}
 .rev-author{font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted)}
 .rev-country{font-size:0.7rem;color:var(--gold);margin-top:0.3rem}
-
-/* ABOUT */
 .about-strip{display:grid;grid-template-columns:1fr 1fr;min-height:450px}
 .about-img{background:var(--black);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
 .about-img-big{font-size:14rem;font-weight:300;color:rgba(255,255,255,0.04);position:absolute}
@@ -151,8 +135,6 @@ select{font-size:0.85rem;border:1px solid rgba(201,168,76,0.4);background:transp
 .about-list{list-style:none;margin-top:1.8rem}
 .about-list li{font-size:0.85rem;padding:0.9rem 0;border-bottom:1px solid rgba(0,0,0,0.06);display:flex;align-items:center;gap:1rem;color:black}
 .about-list li::before{content:'';width:24px;height:1.5px;background:var(--gold);flex-shrink:0}
-
-/* CONTACT */
 .contact-sec{padding:5rem 3rem}
 .contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:4rem}
 .contact-details{margin-top:2rem}
@@ -166,8 +148,6 @@ select{font-size:0.85rem;border:1px solid rgba(201,168,76,0.4);background:transp
 .f-input{width:100%;border:1px solid rgba(0,0,0,0.12);padding:0.9rem 1.2rem;font-family:inherit;font-size:0.9rem;outline:none;background:transparent;color:black}
 .f-input:focus{border-color:var(--gold)}
 .f-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-
-/* FOOTER */
 footer{background:var(--black);color:white;padding:4rem 3rem 2.5rem}
 .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
 .foot-brand p{font-size:0.9rem;line-height:1.8;color:rgba(255,255,255,0.3);margin-top:1.2rem;max-width:280px}
@@ -182,8 +162,6 @@ footer{background:var(--black);color:white;padding:4rem 3rem 2.5rem}
 .foot-socials a{display:flex;align-items:center;gap:0.5rem;font-size:0.85rem;color:rgba(255,255,255,0.4);transition:all 0.3s}
 .foot-socials a i{font-size:1.2rem}
 .foot-socials a:hover{color:var(--gold);transform:translateY(-2px)}
-
-/* RESPONSIVE */
 @media(max-width:900px){
   nav{padding:1rem 1.2rem}
   .nav-links{display:none}
@@ -203,7 +181,6 @@ footer{background:var(--black);color:white;padding:4rem 3rem 2.5rem}
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <div class="logo">PRESTIGE <span>AUTO</span> KR</div>
   <ul class="nav-links">
@@ -230,7 +207,6 @@ footer{background:var(--black);color:white;padding:4rem 3rem 2.5rem}
   </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-left">
     <div class="hero-tag" id="hero-tag"></div>
@@ -260,13 +236,12 @@ footer{background:var(--black);color:white;padding:4rem 3rem 2.5rem}
     </svg>
     <div class="hero-badge">
       <div class="hero-badge-tag" id="featured-lbl">Featured Vehicle</div>
-      <div class="hero-badge-name">Genesis G90 2024</div>
+      <div class="hero-badge-name" id="featuredName">Genesis G90 2024</div>
       <div class="hero-badge-price" id="heroPrice">₩95,000,000</div>
     </div>
   </div>
 </section>
 
-<!-- PLATFORMS -->
 <div class="platforms">
   <span class="plat-lbl" id="plat-lbl">Source Platforms</span>
   <div class="plat-links">
@@ -278,7 +253,6 @@ footer{background:var(--black);color:white;padding:4rem 3rem 2.5rem}
   </div>
 </div>
 
-<!-- SEARCH -->
 <section class="search-sec" id="search-sec">
   <div class="search-inner">
     <div class="search-lbl" id="s-label">Find Your Car</div>
@@ -293,7 +267,7 @@ footer{background:var(--black);color:white;padding:4rem 3rem 2.5rem}
       </div>
       <div class="s-field">
         <span class="s-label" id="sl-year">Year</span>
-        <input class="s-input" id="s_year" type="number" placeholder="e.g. 2023" min="2000" max="2025">
+        <input class="s-input" id="s_year" type="number" placeholder="e.g. 2023" min="2000" max="2030">
       </div>
       <button class="btn-search" id="s-btn" onclick="doSearch()">Search</button>
     </div>
@@ -308,7 +282,6 @@ footer{background:var(--black);color:white;padding:4rem 3rem 2.5rem}
   </div>
 </section>
 
-<!-- CATALOG -->
 <section class="section" id="catalog" style="padding-top:2rem">
   <div class="sec-header">
     <div>
@@ -324,7 +297,6 @@ footer{background:var(--black);color:white;padding:4rem 3rem 2.5rem}
   <div class="cars-grid" id="carsGrid"></div>
 </section>
 
-<!-- CALCULATOR -->
 <section class="calc-sec" id="calc">
   <div class="calc-inner">
     <div>
@@ -381,7 +353,6 @@ footer{background:var(--black);color:white;padding:4rem 3rem 2.5rem}
   </div>
 </section>
 
-<!-- REVIEWS -->
 <section class="section" id="reviews">
   <div class="sec-header">
     <div>
@@ -396,7 +367,6 @@ footer{background:var(--black);color:white;padding:4rem 3rem 2.5rem}
   </div>
 </section>
 
-<!-- ABOUT -->
 <div class="about-strip" id="about">
   <div class="about-img"><div class="about-img-big">PA</div></div>
   <div class="about-content">
@@ -412,7 +382,6 @@ footer{background:var(--black);color:white;padding:4rem 3rem 2.5rem}
   </div>
 </div>
 
-<!-- VIDEO SECTION -->
 <section style="background:#0A0A0A;padding:5rem 3rem;border-top:1px solid rgba(255,255,255,0.05)">
   <div style="max-width:1200px;margin:0 auto">
     <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:2.5rem;flex-wrap:wrap;gap:1rem">
@@ -428,28 +397,21 @@ footer{background:var(--black);color:white;padding:4rem 3rem 2.5rem}
     </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px">
       <a href="https://www.instagram.com/prestigeauto_kr" target="_blank" style="text-decoration:none;display:block;background:#161616;border:1px solid rgba(201,168,76,0.1);overflow:hidden;transition:border-color 0.3s" onmouseover="this.style.borderColor='rgba(201,168,76,0.4)'" onmouseout="this.style.borderColor='rgba(201,168,76,0.1)'">
-        <div style="width:100%;aspect-ratio:16/9;background:linear-gradient(135deg,#0e0e0e,#1a1a1a);display:flex;align-items:center;justify-content:center">
-          <div style="width:52px;height:52px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem">▶</div>
-        </div>
+        <div style="width:100%;aspect-ratio:16/9;background:linear-gradient(135deg,#0e0e0e,#1a1a1a);display:flex;align-items:center;justify-content:center"><div style="width:52px;height:52px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem">▶</div></div>
         <div style="padding:14px 16px"><div style="font-size:0.85rem;font-weight:600;color:white;margin-bottom:3px">Genesis G90 2024 — Export Ready</div><div style="font-size:0.72rem;color:#555;text-transform:uppercase;letter-spacing:0.08em">Instagram · @prestigeauto_kr</div></div>
       </a>
       <a href="https://www.youtube.com/@PrestigeAutoKr" target="_blank" style="text-decoration:none;display:block;background:#161616;border:1px solid rgba(201,168,76,0.1);overflow:hidden;transition:border-color 0.3s" onmouseover="this.style.borderColor='rgba(201,168,76,0.4)'" onmouseout="this.style.borderColor='rgba(201,168,76,0.1)'">
-        <div style="width:100%;aspect-ratio:16/9;background:linear-gradient(135deg,#0e0e0e,#1a1a1a);display:flex;align-items:center;justify-content:center">
-          <div style="width:52px;height:52px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem">▶</div>
-        </div>
+        <div style="width:100%;aspect-ratio:16/9;background:linear-gradient(135deg,#0e0e0e,#1a1a1a);display:flex;align-items:center;justify-content:center"><div style="width:52px;height:52px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem">▶</div></div>
         <div style="padding:14px 16px"><div style="font-size:0.85rem;font-weight:600;color:white;margin-bottom:3px">Lexus LX 600 — Full Walkaround</div><div style="font-size:0.72rem;color:#555;text-transform:uppercase;letter-spacing:0.08em">YouTube · @PrestigeAutoKr</div></div>
       </a>
       <a href="https://www.tiktok.com/@prestigeauto_kr" target="_blank" style="text-decoration:none;display:block;background:#161616;border:1px solid rgba(201,168,76,0.1);overflow:hidden;transition:border-color 0.3s" onmouseover="this.style.borderColor='rgba(201,168,76,0.4)'" onmouseout="this.style.borderColor='rgba(201,168,76,0.1)'">
-        <div style="width:100%;aspect-ratio:16/9;background:linear-gradient(135deg,#0e0e0e,#1a1a1a);display:flex;align-items:center;justify-content:center">
-          <div style="width:52px;height:52px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem">▶</div>
-        </div>
+        <div style="width:100%;aspect-ratio:16/9;background:linear-gradient(135deg,#0e0e0e,#1a1a1a);display:flex;align-items:center;justify-content:center"><div style="width:52px;height:52px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem">▶</div></div>
         <div style="padding:14px 16px"><div style="font-size:0.85rem;font-weight:600;color:white;margin-bottom:3px">Porsche Cayenne — Shipping Day</div><div style="font-size:0.72rem;color:#555;text-transform:uppercase;letter-spacing:0.08em">TikTok · @prestigeauto_kr</div></div>
       </a>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
 <section class="contact-sec" id="contact">
   <div class="contact-inner">
     <div>
@@ -471,13 +433,12 @@ footer{background:var(--black);color:white;padding:4rem 3rem 2.5rem}
       <div class="f-group"><label class="f-label" id="f-budget-lbl">Budget</label>
         <select class="f-input"><option>$30,000–$50,000</option><option>$50,000–$80,000</option><option>$80,000–$120,000</option><option>$120,000+</option></select>
       </div>
-      <div class="f-group"><label class="f-label" id="f-msg-lbl">Message</label><textarea class="f-input" rows="3" placeholder="Any requirements..."></textarea></div>
+      <div class="f-group"><label class="f-label" id="f-msg-lbl">Message</label><textarea class="f-textarea" class="f-input" rows="3" placeholder="Any requirements..."></textarea></div>
       <button class="btn-black" style="width:100%;margin-top:0.5rem" id="f-submit-btn">Send Inquiry</button>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="foot-grid">
     <div class="foot-brand">
@@ -506,7 +467,6 @@ footer{background:var(--black);color:white;padding:4rem 3rem 2.5rem}
   </div>
 </footer>
 
-<!-- MODAL -->
 <div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
   <div class="modal" id="modalBox">
     <div class="modal-header">
@@ -519,139 +479,20 @@ footer{background:var(--black);color:white;padding:4rem 3rem 2.5rem}
 </div>
 
 <script>
-// ══ RATES & SYMBOLS ══
 const R={KRW:1,USD:0.00075,EUR:0.00069,AED:0.00275,RUB:0.068};
 const S={KRW:'₩',USD:'$',EUR:'€',AED:'AED ',RUB:'₽'};
 let cur='KRW', lang='en';
 
 function fmt(krw,c){c=c||cur;return S[c]+Math.round(krw*R[c]).toLocaleString()}
 
-// ══ TRANSLATIONS ══
 const TR={
-  en:{
-    navCatalog:'Catalog',navAbout:'About',navReviews:'Reviews',navContact:'Contact',navInquire:'Inquire',
-    heroTag:'Korea & Japan Premium Auto Export',
-    heroTitle:'Drive<br>Beyond<br><em>Borders</em>',
-    heroDesc:'Curated luxury vehicles from Korea and Japan. Transparent pricing, global container delivery.',
-    heroBtn1:'View Catalog',heroBtn2:'Export Price',
-    stat1:'Cars Exported',stat2:'Countries',stat3:'Rating',
-    featuredLbl:'Featured Vehicle',
-    platLbl:'Source Platforms',
-    sLabel:'Find Your Car',slBrand:'Brand',slModel:'Model',slYear:'Year',sBtn:'Search',
-    tagAll:'All',tagSedan:'Sedan',tagSuv:'SUV',tagElectric:'Electric',tagLuxury:'Luxury',tagHybrid:'Hybrid',
-    brandPh:'e.g. Genesis, BMW...',modelPh:'e.g. G80, LX 600...',yearPh:'e.g. 2023',
-    catLabel:'Our Selection',catTitle:'Featured Vehicles',
-    results:'results',clearBtn:'✕ Clear Search',
-    calcTitle:'Your Price,<br>Your Country',
-    calcDesc:'Enter your destination and see the full price including container shipping and insurance.',
-    cVehicle:'Vehicle',cDest:'Destination',cCur:'Currency',cCont:'Container',
-    rCar:'Car price',rShip:'Shipping',rIns:'Insurance (0.5%)',rTotal:'Total Export',
-    revTag:'Testimonials',revTitle:'What Clients Say',
-    aboutTag:'Who We Are',aboutTitle:"Korea & Japan's Export House",
-    aboutDesc:"Based in Seoul, we connect buyers worldwide with verified premium vehicles from Korea and Japan's top platforms.",
-    aboutList:['Direct sourcing from Encar, KB Cha Cha Cha & Hey Dealer','Full inspection & accident history check','Door-to-port container delivery','Multi-currency transparent pricing'],
-    contactTag:'Get In Touch',contactTitle:'Start Your Export Journey',
-    fName:'Full Name',fCountry:'Country',fCar:'Vehicle of Interest',fBudget:'Budget',fMsg:'Message',fSubmit:'Send Inquiry',
-    footDesc:"Korea & Japan's premier luxury vehicle export. Transparent pricing, global delivery.",
-    footCat:'Catalog',footCompany:'Company',footAbout:'About',footReviews:'Reviews',footContact:'Contact',
-    mileage:'Mileage',engine:'Engine',fuel:'Fuel',trans:'Trans',color:'Color',drive:'Drive',yearL:'Year',
-    price:'Price',inquiry:'Send Inquiry',encarBtn:'View on Platform',noResults:'No cars found',
-    km:'km',
-  },
-  ru:{
-    navCatalog:'Каталог',navAbout:'О нас',navReviews:'Отзывы',navContact:'Контакт',navInquire:'Запрос',
-    heroTag:'Премиальный экспорт из Кореи и Японии',
-    heroTitle:'Езди<br>Без<br><em>Границ</em>',
-    heroDesc:'Отборные авто из Кореи и Японии. Прозрачные цены, доставка по всему миру.',
-    heroBtn1:'Каталог',heroBtn2:'Цена экспорта',
-    stat1:'Экспортировано',stat2:'Стран',stat3:'Рейтинг',
-    featuredLbl:'Рекомендуемое авто',
-    platLbl:'Платформы',
-    sLabel:'Найти автомобиль',slBrand:'Марка',slModel:'Модель',slYear:'Год',sBtn:'Найти',
-    tagAll:'Все',tagSedan:'Седан',tagSuv:'Внедорожник',tagElectric:'Электро',tagLuxury:'Люкс',tagHybrid:'Гибрид',
-    brandPh:'напр. Genesis, BMW...',modelPh:'напр. G80, LX 600...',yearPh:'напр. 2023',
-    catLabel:'Наш выбор',catTitle:'Доступные авто',
-    results:'результатов',clearBtn:'✕ Сбросить',
-    calcTitle:'Ваша цена,<br>Ваша страна',
-    calcDesc:'Выберите страну назначения и узнайте полную стоимость с доставкой и страховкой.',
-    cVehicle:'Автомобиль',cDest:'Назначение',cCur:'Валюта',cCont:'Контейнер',
-    rCar:'Цена авто',rShip:'Доставка',rIns:'Страховка (0.5%)',rTotal:'Итого',
-    revTag:'Отзывы',revTitle:'Что говорят клиенты',
-    aboutTag:'О нас',aboutTitle:'Экспортный дом Кореи и Японии',
-    aboutDesc:'Находясь в Сеуле, мы связываем покупателей по всему миру с проверенными премиальными автомобилями.',
-    aboutList:['Прямые закупки с Encar, KB Cha Cha Cha и Hey Dealer','Полный осмотр и проверка истории ДТП','Доставка контейнером до порта','Прозрачные цены в нескольких валютах'],
-    contactTag:'Связаться',contactTitle:'Начните свой экспортный путь',
-    fName:'Полное имя',fCountry:'Страна',fCar:'Интересующее авто',fBudget:'Бюджет',fMsg:'Сообщение',fSubmit:'Отправить запрос',
-    footDesc:'Премиальный экспорт авто из Кореи и Японии. Прозрачные цены, глобальная доставка.',
-    footCat:'Каталог',footCompany:'Компания',footAbout:'О нас',footReviews:'Отзывы',footContact:'Контакт',
-    mileage:'Пробег',engine:'Двигатель',fuel:'Топливо',trans:'КПП',color:'Цвет',drive:'Привод',yearL:'Год',
-    price:'Цена',inquiry:'Отправить запрос',encarBtn:'На платформе',noResults:'Авто не найдены',
-    km:'км',
-  },
-  ar:{
-    navCatalog:'المعرض',navAbout:'من نحن',navReviews:'التقييمات',navContact:'اتصل',navInquire:'استفسر',
-    heroTag:'تصدير السيارات الفاخرة من كوريا واليابان',
-    heroTitle:'قُد<br>بلا<br><em>حدود</em>',
-    heroDesc:'سيارات فاخرة من كوريا واليابان. أسعار شفافة وشحن عالمي.',
-    heroBtn1:'عرض المعرض',heroBtn2:'سعر التصدير',
-    stat1:'سيارة مصدّرة',stat2:'دولة',stat3:'تقييم',
-    featuredLbl:'السيارة المميزة',
-    platLbl:'المنصات',
-    sLabel:'ابحث عن سيارتك',slBrand:'الماركة',slModel:'الموديل',slYear:'السنة',sBtn:'بحث',
-    tagAll:'الكل',tagSedan:'سيدان',tagSuv:'دفع رباعي',tagElectric:'كهربائي',tagLuxury:'فاخر',tagHybrid:'هجين',
-    brandPh:'مثال: Genesis, BMW',modelPh:'مثال: G80, LX 600',yearPh:'مثال: 2023',
-    catLabel:'تشكيلتنا',catTitle:'السيارات المتاحة',
-    results:'نتيجة',clearBtn:'✕ مسح البحث',
-    calcTitle:'سعرك<br>وبلدك',
-    calcDesc:'اختر وجهتك وشاهد السعر الكامل مع الشحن والتأمين.',
-    cVehicle:'السيارة',cDest:'الوجهة',cCur:'العملة',cCont:'الحاوية',
-    rCar:'سعر السيارة',rShip:'الشحن',rIns:'التأمين (0.5%)',rTotal:'المجموع',
-    revTag:'آراء العملاء',revTitle:'ماذا يقول عملاؤنا',
-    aboutTag:'من نحن',aboutTitle:'دار تصدير كوريا واليابان',
-    aboutDesc:'من سيول، نربط المشترين حول العالم بسيارات فاخرة موثقة.',
-    aboutList:['مصادر مباشرة من Encar و KB و Hey Dealer','فحص كامل وكشف تاريخ الحوادث','شحن بالحاوية من الباب إلى الميناء','تسعير شفاف بعدة عملات'],
-    contactTag:'تواصل معنا',contactTitle:'ابدأ رحلة تصديرك',
-    fName:'الاسم الكامل',fCountry:'البلد',fCar:'السيارة المطلوبة',fBudget:'الميزانية',fMsg:'الرسالة',fSubmit:'إرسال استفسار',
-    footDesc:'الشريك الموثوق لتصدير السيارات الفاخرة من كوريا واليابان.',
-    footCat:'الكتالوج',footCompany:'الشركة',footAbout:'من نحن',footReviews:'التقييمات',footContact:'اتصل',
-    mileage:'المسافة',engine:'المحرك',fuel:'الوقود',trans:'ناقل الحركة',color:'اللون',drive:'الدفع',yearL:'السنة',
-    price:'السعر',inquiry:'إرسال استفسار',encarBtn:'عرض على المنصة',noResults:'لا توجد سيارات',
-    km:'كم',
-  },
-  ko:{
-    navCatalog:'카탈로그',navAbout:'소개',navReviews:'리뷰',navContact:'연락처',navInquire:'문의',
-    heroTag:'한국 & 일본 프리미엄 자동차 수출',
-    heroTitle:'경계를<br>넘어<br><em>달려라</em>',
-    heroDesc:'한국과 일본의 엄선된 프리미엄 차량. 투명한 가격, 전세계 컨테이너 배송.',
-    heroBtn1:'카탈로그 보기',heroBtn2:'수출 가격',
-    stat1:'수출 차량',stat2:'국가',stat3:'평점',
-    featuredLbl:'추천 차량',
-    platLbl:'소싱 플랫폼',
-    sLabel:'차량 검색',slBrand:'브랜드',slModel:'모델',slYear:'연도',sBtn:'검색',
-    tagAll:'전체',tagSedan:'세단',tagSuv:'SUV',tagElectric:'전기차',tagLuxury:'럭셔리',tagHybrid:'하이브리드',
-    brandPh:'예: 제네시스, BMW...',modelPh:'예: G80, LX 600...',yearPh:'예: 2023',
-    catLabel:'보유 차량',catTitle:'판매 가능 차량',
-    results:'대',clearBtn:'✕ 초기화',
-    calcTitle:'나라별<br>수출 가격',
-    calcDesc:'목적지를 선택하고 컨테이너 운송 및 보험을 포함한 전체 가격을 확인하세요.',
-    cVehicle:'차량',cDest:'목적지',cCur:'통화',cCont:'컨테이너',
-    rCar:'차량 가격',rShip:'운송비',rIns:'보험 (0.5%)',rTotal:'총 수출 가격',
-    revTag:'고객 후기',revTitle:'고객들의 이야기',
-    aboutTag:'소개',aboutTitle:'한국 & 일본 수출 하우스',
-    aboutDesc:'서울에 기반을 두고 있으며, 전세계 구매자와 한국·일본의 검증된 프리미엄 차량을 연결합니다.',
-    aboutList:['Encar, KB 차차차, 헤이딜러 직접 소싱','완전 검사 및 사고 이력 조회','도어-투-포트 컨테이너 배송','다중 통화 투명 가격 책정'],
-    contactTag:'문의하기',contactTitle:'수출 여정을 시작하세요',
-    fName:'성함',fCountry:'국가',fCar:'관심 차량',fBudget:'예산',fMsg:'메시지',fSubmit:'문의 보내기',
-    footDesc:'한국·일본 프리미엄 차량 수출 전문. 투명한 가격, 전세계 배송.',
-    footCat:'카탈로그',footCompany:'회사',footAbout:'소개',footReviews:'리뷰',footContact:'연락처',
-    mileage:'주행거리',engine:'엔진',fuel:'연료',trans:'변속기',color:'색상',drive:'구동',yearL:'연도',
-    price:'가격',inquiry:'문의하기',encarBtn:'플랫폼에서 보기',noResults:'차량 없음',
-    km:'km',
-  }
+  en:{navCatalog:'Catalog',navAbout:'About',navReviews:'Reviews',navContact:'Contact',navInquire:'Inquire',heroTag:'Korea & Japan Premium Auto Export',heroTitle:'Drive<br>Beyond<br><em>Borders</em>',heroDesc:'Curated luxury vehicles from Korea and Japan. Transparent pricing, global container delivery.',heroBtn1:'View Catalog',heroBtn2:'Export Price',stat1:'Cars Exported',stat2:'Countries',stat3:'Rating',featuredLbl:'Featured Vehicle',platLbl:'Source Platforms',sLabel:'Find Your Car',slBrand:'Brand',slModel:'Model',slYear:'Year',sBtn:'Search',tagAll:'All',tagSedan:'Sedan',tagSuv:'SUV',tagElectric:'Electric',tagLuxury:'Luxury',tagHybrid:'Hybrid',brandPh:'e.g. Genesis, BMW...',modelPh:'e.g. G80, LX 600...',yearPh:'e.g. 2023',catLabel:'Our Selection',catTitle:'Featured Vehicles',results:'results',clearBtn:'✕ Clear Search',calcTitle:'Your Price,<br>Your Country',calcDesc:'Enter your destination and see the full price including container shipping and insurance.',cVehicle:'Vehicle',cDest:'Destination',cCur:'Currency',cCont:'Container',rCar:'Car price',rShip:'Shipping',rIns:'Insurance (0.5%)',rTotal:'Total Export',revTag:'Testimonials',revTitle:'What Clients Say',aboutTag:'Who We Are',aboutTitle:"Korea & Japan's Export House",aboutDesc:"Based in Seoul, we connect buyers worldwide with verified premium vehicles from Korea and Japan's top platforms.",aboutList:['Direct sourcing from Encar, KB Cha Cha Cha & Hey Dealer','Full inspection & accident history check','Door-to-port container delivery','Multi-currency transparent pricing'],contactTag:'Get In Touch',contactTitle:'Start Your Export Journey',fName:'Full Name',fCountry:'Country',fCar:'Vehicle of Interest',fBudget:'Budget',fMsg:'Message',fSubmit:'Send Inquiry',footDesc:"Korea & Japan's premier luxury vehicle export. Transparent pricing, global delivery.",footCat:'Catalog',footCompany:'Company',footAbout:'About',footReviews:'Reviews',footContact:'Contact',mileage:'Mileage',engine:'Engine',fuel:'Fuel',trans:'Trans',color:'Color',drive:'Drive',yearL:'Year',price:'Price',inquiry:'Send Inquiry',encarBtn:'View on Platform',noResults:'No cars found',km:'km'},
+  ru:{navCatalog:'Каталог',navAbout:'О нас',navReviews:'Отзывы',navContact:'Контакт',navInquire:'Запрос',heroTag:'Премиальный экспорт из Кореи и Японии',heroTitle:'Езди<br>Без<br><em>Границ</em>',heroDesc:'Отборные авто из Кореи и Японии. Прозрачные цены, доставка по всему миру.',heroBtn1:'Каталог',heroBtn2:'Цена экспорта',stat1:'Экспортировано',stat2:'Стран',stat3:'Рейтинг',featuredLbl:'Рекомендуемое авто',platLbl:'Платформы',sLabel:'Найти автомобиль',slBrand:'Марка',slModel:'Модель',slYear:'Год',sBtn:'Найти',tagAll:'Все',tagSedan:'Седан',tagSuv:'Внедорожник',tagElectric:'Электро',tagLuxury:'Люкс',tagHybrid:'Гибрид',brandPh:'напр. Genesis, BMW...',modelPh:'напр. G80, LX 600...',yearPh:'напр. 2023',catLabel:'Наш выбор',catTitle:'Доступные авто',results:'результатов',clearBtn:'✕ Сбросить',calcTitle:'Ваша цена,<br>Ваша страна',calcDesc:'Выберите страну назначения и узнайте полную стоимость с доставкой и страховкой.',cVehicle:'Автомобиль',cDest:'Назначение',cCur:'Валюта',cCont:'Контейнер',rCar:'Цена авто',rShip:'Доставка',rIns:'Страховка (0.5%)',rTotal:'Итого',revTag:'Отзывы',revTitle:'Что говорят клиенты',aboutTag:'О нас',aboutTitle:'Экспортный дом Кореи и Японии',aboutDesc:'Находясь в Сеуле, мы связываем покупателей по всему миру с проверенными премиальными автомобилями.',aboutList:['Прямые закупки с Encar, KB Cha Cha Cha и Hey Dealer','Полный осмотр и проверка истории ДТП','Доставка контейнером до порта','Прозрачные цены в нескольких валютах'],contactTag:'Связаться',contactTitle:'Начните свой экспортный путь',fName:'Полное имя',fCountry:'Страна',fCar:'Интересующее авто',fBudget:'Бюджет',fMsg:'Сообщение',fSubmit:'Отправить запрос',footDesc:'Премиальный экспорт авто из Кореи и Японии.',footCat:'Каталог',footCompany:'Компания',footAbout:'О нас',footReviews:'Отзывы',footContact:'Контакт',mileage:'Пробег',engine:'Двигатель',fuel:'Топливо',trans:'КПП',color:'Цвет',drive:'Привод',yearL:'Год',price:'Цена',inquiry:'Отправить запрос',encarBtn:'На платформе',noResults:'Авто не найдены',km:'км'},
+  ar:{navCatalog:'المعرض',navAbout:'من نحن',navReviews:'التقييمات',navContact:'اتصل',navInquire:'استفسر',heroTag:'تصدير السيارات الفاخرة من كوريا واليابان',heroTitle:'قُد<br>بلا<br><em>حدود</em>',heroDesc:'سيارات فاخرة من كوريا واليابان. أسعار شفافة وشحن عالمي.',heroBtn1:'عرض المعرض',heroBtn2:'سعر التصدير',stat1:'سيارة مصدّرة',stat2:'دولة',stat3:'تقييم',featuredLbl:'السيارة المميزة',platLbl:'المنصات',sLabel:'ابحث عن سيارتك',slBrand:'الماركة',slModel:'الموديل',slYear:'السنة',sBtn:'بحث',tagAll:'الكل',tagSedan:'سيدان',tagSuv:'دفع رباعي',tagElectric:'كهربائي',tagLuxury:'فاخر',tagHybrid:'هجين',brandPh:'مثال: Genesis, BMW',modelPh:'مثال: G80, LX 600',yearPh:'مثال: 2023',catLabel:'تشكيلتنا',catTitle:'السيارات المتاحة',results:'نتيجة',clearBtn:'✕ مسح البحث',calcTitle:'سعرك<br>وبلدك',calcDesc:'اختر وجهتك وشاهد السعر الكامل مع الشحن والتأمين.',cVehicle:'السيارة',cDest:'الوجهة',cCur:'العملة',cCont:'الحاوية',rCar:'سعر السيارة',rShip:'الشحن',rIns:'التأمين (0.5%)',rTotal:'المجموع',revTag:'آراء العملاء',revTitle:'ماذا يقول عملاؤنا',aboutTag:'من نحن',aboutTitle:'دار تصدير كوريا واليابان',aboutDesc:'من سيول، نربط المشترين حول العالم بسيارات فاخرة موثقة.',aboutList:['مصادر مباشرة من Encar و KB و Hey Dealer','فحص كامل وكشف تاريخ الحوادث','شحن بالحاوية من الباب إلى الميناء','تسعير شفاف بعدة عملات'],contactTag:'تواصل معنا',contactTitle:'ابدأ رحلة تصديرك',fName:'الاسم الكامل',fCountry:'البلد',fCar:'السيارة المطلوبة',fBudget:'الميزانية',fMsg:'الرسالة',fSubmit:'إرسال استفسار',footDesc:'الشريك الموثوق لتصدير السيارات الفاخرة.',footCat:'الكتالوج',footCompany:'الشركة',footAbout:'من نحن',footReviews:'التقييمات',footContact:'اتصل',mileage:'المسافة',engine:'المحرك',fuel:'الوقود',trans:'ناقل الحركة',color:'اللون',drive:'الدفع',yearL:'السنة',price:'السعر',inquiry:'إرسال استفسار',encarBtn:'عرض على المنصة',noResults:'لا توجد سيارات',km:'كم'},
+  ko:{navCatalog:'카탈로그',navAbout:'소개',navReviews:'리뷰',navContact:'연락처',navInquire:'문의',heroTag:'한국 & 일본 프리미엄 자동차 수출',heroTitle:'경계를<br>넘어<br><em>달려라</em>',heroDesc:'한국과 일본의 엄선된 프리미엄 차량. 투명한 가격, 전세계 컨테이너 배송.',heroBtn1:'카탈로그 보기',heroBtn2:'수출 가격',stat1:'수출 차량',stat2:'국가',stat3:'평점',featuredLbl:'추천 차량',platLbl:'소싱 플랫폼',sLabel:'차량 검색',slBrand:'브랜드',slModel:'모델',slYear:'연도',sBtn:'검색',tagAll:'전체',tagSedan:'세단',tagSuv:'SUV',tagElectric:'전기차',tagLuxury:'럭셔리',tagHybrid:'하이브리드',brandPh:'예: 제네시스, BMW...',modelPh:'예: G80, LX 600...',yearPh:'예: 2023',catLabel:'보유 차량',catTitle:'판매 가능 차량',results:'대',clearBtn:'✕ 초기화',calcTitle:'나라별<br>수출 가격',calcDesc:'목적지를 선택하고 컨테이너 운송 및 보험을 포함한 전체 가격을 확인하세요.',cVehicle:'차량',cDest:'목적지',cCur:'통화',cCont:'컨테이너',rCar:'차량 가격',rShip:'운송비',rIns:'보험 (0.5%)',rTotal:'총 수출 가격',revTag:'고객 후기',revTitle:'고객들의 이야기',aboutTag:'소개',aboutTitle:'한국 & 일본 수출 하우스',aboutDesc:'서울에 기반을 두고 있으며, 전세계 구매자와 한국·일본의 검증된 프리미엄 차량을 연결합니다.',aboutList:['Encar, KB 차차차, 헤이딜러 직접 소싱','완전 검사 및 사고 이력 조회','도어-투-포트 컨테이너 배송','다중 통화 투명 가격 책정'],contactTag:'문의하기',contactTitle:'수출 여정을 시작하세요',fName:'성함',fCountry:'국가',fCar:'관심 차량',fBudget:'예산',fMsg:'메시지',fSubmit:'문의 보내기',footDesc:'한국·일본 프리미엄 차량 수출 전문.',footCat:'카탈로그',footCompany:'회사',footAbout:'소개',footReviews:'리뷰',footContact:'연락처',mileage:'주행거리',engine:'엔진',fuel:'연료',trans:'변속기',color:'색상',drive:'구동',yearL:'연도',price:'가격',inquiry:'문의하기',encarBtn:'플랫폼에서 보기',noResults:'차량 없음',km:'km'}
 };
 function T(k){return(TR[lang]||TR.en)[k]||(TR.en[k])||k}
 
-// ══ CARS DATA — loads from admin localStorage ══
 const BG_COLORS=[
   'linear-gradient(145deg,#EDEBE5,#D8D4CC)',
   'linear-gradient(145deg,#E0E0D8,#CACABE)',
@@ -664,11 +505,14 @@ const BG_COLORS=[
   'linear-gradient(145deg,#E4E0D8,#D0CBC0)',
   'linear-gradient(145deg,#DFE8E0,#C8D5CA)',
 ];
+
 function getAbbr(brand,model){
   const b=(brand||'').replace(/[^A-Za-z]/g,'').substring(0,3).toUpperCase();
   const m=(model||'').replace(/[^A-Za-z0-9]/g,'').substring(0,3).toUpperCase();
   return b||m||'CAR';
 }
+
+// ══ FIX: localStorage dan to'g'ri yuklash ══
 function loadCars(){
   try{
     const stored=localStorage.getItem('pak_cars');
@@ -678,12 +522,17 @@ function loadCars(){
         .filter(c=>c.active!==false)
         .map((c,i)=>({
           ...c,
+          // id ni har doim string sifatida saqlash
+          id: String(c.id),
           abbr: getAbbr(c.brand,c.model),
           bg: BG_COLORS[i%BG_COLORS.length],
         }));
     }
-  }catch(e){}
-  // Default fallback
+  }catch(e){console.warn('loadCars error:',e)}
+  return getDefaultCars();
+}
+
+function getDefaultCars(){
   return [
     {id:'c1',brand:'Mercedes-Benz',model:'E-Class 300',year:2024,type:'sedan',krw:78000000,mileage:8200,engine:'2.0T',fuel:'Gasoline',trans:'Auto 9',color:'Black',drive:'RWD',src:'🇰🇷 Encar',encar:'https://www.encar.com',abbr:'MBZ',bg:BG_COLORS[0]},
     {id:'c2',brand:'Lexus',model:'LX 600',year:2024,type:'suv',krw:125000000,mileage:12000,engine:'3.5T',fuel:'Gasoline',trans:'Auto 10',color:'White',drive:'4WD',src:'🇯🇵 Hey Dealer',encar:'https://www.heydealer.com',abbr:'LX6',bg:BG_COLORS[1]},
@@ -695,88 +544,47 @@ function loadCars(){
     {id:'c8',brand:'Genesis',model:'GV80',year:2023,type:'luxury',krw:72000000,mileage:19000,engine:'2.5T',fuel:'Gasoline',trans:'Auto 8',color:'Savile Silver',drive:'AWD',src:'🇰🇷 Encar',encar:'https://www.encar.com',abbr:'GV8',bg:BG_COLORS[7]},
   ];
 }
-let CARS = loadCars();
 
-// ══ SEARCH STATE ══
+let CARS = loadCars();
 let searchState={brand:'',model:'',year:'',type:'all'};
 
-// ══ UPDATE ALL TEXT ══
 function updateAllText(){
-  // Nav
-  document.getElementById('nav-catalog').textContent=T('navCatalog');
-  document.getElementById('nav-about').textContent=T('navAbout');
-  document.getElementById('nav-reviews').textContent=T('navReviews');
-  document.getElementById('nav-contact').textContent=T('navContact');
-  document.getElementById('nav-inquire').textContent=T('navInquire');
-  // Hero
-  document.getElementById('hero-tag').textContent=T('heroTag');
+  const ids={
+    'nav-catalog':'navCatalog','nav-about':'navAbout','nav-reviews':'navReviews',
+    'nav-contact':'navContact','nav-inquire':'navInquire','hero-tag':'heroTag',
+    'hero-btn1':'heroBtn1','hero-btn2':'heroBtn2','stat1':'stat1','stat2':'stat2',
+    'stat3':'stat3','featured-lbl':'featuredLbl','plat-lbl':'platLbl',
+    's-label':'sLabel','sl-brand':'slBrand','sl-model':'slModel','sl-year':'slYear',
+    's-btn':'sBtn','tag-all':'tagAll','tag-sedan':'tagSedan','tag-suv':'tagSuv',
+    'tag-electric':'tagElectric','tag-luxury':'tagLuxury','tag-hybrid':'tagHybrid',
+    'r-clear-btn':'clearBtn','cat-label':'catLabel','cat-title':'catTitle',
+    'calc-desc':'calcDesc','c-vehicle-lbl':'cVehicle','c-dest-lbl':'cDest',
+    'c-cur-lbl':'cCur','c-cont-lbl':'cCont','r-car-lbl':'rCar','r-ship-lbl':'rShip',
+    'r-ins-lbl':'rIns','r-total-lbl':'rTotal','rev-tag':'revTag','rev-title':'revTitle',
+    'about-tag':'aboutTag','about-title':'aboutTitle','about-desc':'aboutDesc',
+    'contact-tag':'contactTag','contact-title':'contactTitle','f-name-lbl':'fName',
+    'f-country-lbl':'fCountry','f-car-lbl':'fCar','f-budget-lbl':'fBudget',
+    'f-msg-lbl':'fMsg','f-submit-btn':'fSubmit','foot-desc':'footDesc',
+    'foot-cat-title':'footCat','foot-company-title':'footCompany',
+    'foot-about':'footAbout','foot-reviews':'footReviews','foot-contact':'footContact',
+  };
+  Object.entries(ids).forEach(([id,key])=>{
+    const el=document.getElementById(id);
+    if(el)el.textContent=T(key);
+  });
+  // innerHTML fields
   document.getElementById('hero-title').innerHTML=T('heroTitle');
-  document.getElementById('hero-desc').textContent=T('heroDesc');
-  document.getElementById('hero-btn1').textContent=T('heroBtn1');
-  document.getElementById('hero-btn2').textContent=T('heroBtn2');
-  document.getElementById('stat1').textContent=T('stat1');
-  document.getElementById('stat2').textContent=T('stat2');
-  document.getElementById('stat3').textContent=T('stat3');
-  document.getElementById('featured-lbl').textContent=T('featuredLbl');
-  document.getElementById('plat-lbl').textContent=T('platLbl');
-  // Search
-  document.getElementById('s-label').textContent=T('sLabel');
-  document.getElementById('sl-brand').textContent=T('slBrand');
-  document.getElementById('sl-model').textContent=T('slModel');
-  document.getElementById('sl-year').textContent=T('slYear');
-  document.getElementById('s-btn').textContent=T('sBtn');
+  document.getElementById('calc-title').innerHTML=T('calcTitle');
+  // placeholders
   document.getElementById('s_brand').placeholder=T('brandPh');
   document.getElementById('s_model').placeholder=T('modelPh');
   document.getElementById('s_year').placeholder=T('yearPh');
-  document.getElementById('tag-all').textContent=T('tagAll');
-  document.getElementById('tag-sedan').textContent=T('tagSedan');
-  document.getElementById('tag-suv').textContent=T('tagSuv');
-  document.getElementById('tag-electric').textContent=T('tagElectric');
-  document.getElementById('tag-luxury').textContent=T('tagLuxury');
-  document.getElementById('tag-hybrid').textContent=T('tagHybrid');
-  document.getElementById('r-clear-btn').textContent=T('clearBtn');
-  // Catalog
-  document.getElementById('cat-label').textContent=T('catLabel');
-  document.getElementById('cat-title').textContent=T('catTitle');
-  // Calc
-  document.getElementById('calc-title').innerHTML=T('calcTitle');
-  document.getElementById('calc-desc').textContent=T('calcDesc');
-  document.getElementById('c-vehicle-lbl').textContent=T('cVehicle');
-  document.getElementById('c-dest-lbl').textContent=T('cDest');
-  document.getElementById('c-cur-lbl').textContent=T('cCur');
-  document.getElementById('c-cont-lbl').textContent=T('cCont');
-  document.getElementById('r-car-lbl').textContent=T('rCar');
-  document.getElementById('r-ship-lbl').textContent=T('rShip');
-  document.getElementById('r-ins-lbl').textContent=T('rIns');
-  document.getElementById('r-total-lbl').textContent=T('rTotal');
-  // Reviews
-  document.getElementById('rev-tag').textContent=T('revTag');
-  document.getElementById('rev-title').textContent=T('revTitle');
-  // About
-  document.getElementById('about-tag').textContent=T('aboutTag');
-  document.getElementById('about-title').textContent=T('aboutTitle');
-  document.getElementById('about-desc').textContent=T('aboutDesc');
+  // about list
   const li=document.querySelectorAll('#about-list li');
   T('aboutList').forEach((t,i)=>{if(li[i])li[i].textContent=t});
-  // Contact
-  document.getElementById('contact-tag').textContent=T('contactTag');
-  document.getElementById('contact-title').textContent=T('contactTitle');
-  document.getElementById('f-name-lbl').textContent=T('fName');
-  document.getElementById('f-country-lbl').textContent=T('fCountry');
-  document.getElementById('f-car-lbl').textContent=T('fCar');
-  document.getElementById('f-budget-lbl').textContent=T('fBudget');
-  document.getElementById('f-msg-lbl').textContent=T('fMsg');
-  document.getElementById('f-submit-btn').textContent=T('fSubmit');
-  // Footer
-  document.getElementById('foot-desc').textContent=T('footDesc');
-  document.getElementById('foot-cat-title').textContent=T('footCat');
-  document.getElementById('foot-company-title').textContent=T('footCompany');
-  document.getElementById('foot-about').textContent=T('footAbout');
-  document.getElementById('foot-reviews').textContent=T('footReviews');
-  document.getElementById('foot-contact').textContent=T('footContact');
 }
 
-// ══ RENDER CARS ══
+// ══ FIX: renderCars — id ni string sifatida onclick ga uzatish ══
 function renderCars(cars){
   const grid=document.getElementById('carsGrid');
   document.getElementById('catCount').textContent=cars.length+' '+T('results');
@@ -784,26 +592,32 @@ function renderCars(cars){
     grid.innerHTML=`<div class="empty-state"><div style="font-size:3rem;opacity:0.2">🚗</div><div style="font-size:0.9rem;letter-spacing:0.1em;text-transform:uppercase;margin-top:1rem">${T('noResults')}</div></div>`;
     return;
   }
-  grid.innerHTML=cars.map(c=>`
-    <div class="car-card" onclick="openModal(${c.id})">
+  grid.innerHTML=cars.map(c=>{
+    // ══ BUG FIX: id ni JSON.stringify orqali xavfsiz uzatish ══
+    const safeId=JSON.stringify(String(c.id));
+    const thumbHtml = c.image
+      ? `<img class="car-img" src="${c.image}" alt="${c.brand} ${c.model}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">`
+      + `<span class="car-abbr" style="display:none">${c.abbr}</span>`
+      : `<span class="car-abbr">${c.abbr}</span>`;
+    return `
+    <div class="car-card" onclick="openModal(${safeId})">
       <div class="car-thumb" style="background:${c.bg}">
-        <span class="car-abbr">${c.abbr}</span>
+        ${thumbHtml}
         <span class="car-src">${c.src}</span>
       </div>
       <div class="car-body">
         <div class="car-brand">${c.brand}</div>
         <div class="car-name">${c.model}</div>
-        <div class="car-meta">${c.year} · ${c.mileage.toLocaleString()} ${T('km')} · ${c.color}</div>
+        <div class="car-meta">${c.year} · ${(c.mileage||0).toLocaleString()} ${T('km')} · ${c.color||''}</div>
         <div class="car-foot">
           <span class="car-price">${fmt(c.krw)}</span>
           <span class="car-type-badge">${c.type}</span>
         </div>
       </div>
-    </div>
-  `).join('');
+    </div>`;
+  }).join('');
 }
 
-// ══ SEARCH ══
 function doSearch(){
   searchState.brand=document.getElementById('s_brand').value.trim().toLowerCase();
   searchState.model=document.getElementById('s_model').value.trim().toLowerCase();
@@ -814,7 +628,6 @@ function doSearch(){
 }
 
 function applySearch(){
-  // Reload from localStorage every time
   CARS = loadCars();
   const{brand,model,year,type}=searchState;
   const hasSearch=brand||model||year||(type&&type!=='all');
@@ -860,39 +673,47 @@ function clearSearch(){
 function restoreSearch(){
   try{
     const s=JSON.parse(sessionStorage.getItem('pa_search')||'{}');
-    if(s.brand)document.getElementById('s_brand').value=searchState.brand=s.brand;
-    if(s.model)document.getElementById('s_model').value=searchState.model=s.model;
-    if(s.year)document.getElementById('s_year').value=searchState.year=s.year;
-    if(s.type)searchState.type=s.type;
+    if(s.brand){document.getElementById('s_brand').value=s.brand;searchState.brand=s.brand;}
+    if(s.model){document.getElementById('s_model').value=s.model;searchState.model=s.model;}
+    if(s.year){document.getElementById('s_year').value=s.year;searchState.year=s.year;}
+    if(s.type){searchState.type=s.type;}
     if(s.type&&s.type!=='all'){
       document.querySelectorAll('.s-tag').forEach(b=>b.classList.remove('active'));
-      const tagMap={all:'tag-all',sedan:'tag-sedan',suv:'tag-suv',electric:'tag-electric',luxury:'tag-luxury',hybrid:'tag-hybrid'};
+      const tagMap={sedan:'tag-sedan',suv:'tag-suv',electric:'tag-electric',luxury:'tag-luxury',hybrid:'tag-hybrid'};
       const el=document.getElementById(tagMap[s.type]);
       if(el)el.classList.add('active');
     }
   }catch(e){}
 }
 
-// ══ MODAL ══
+// ══ FIX: openModal — id String sifatida qabul qilish ══
 function openModal(id){
-  const c=CARS.find(x=>x.id===id);if(!c)return;
+  const sid=String(id);
+  const c=CARS.find(x=>String(x.id)===sid);
+  if(!c)return;
   document.getElementById('mBrand').textContent=c.brand;
   document.getElementById('mName').textContent=c.model+' '+c.year;
   const th=document.getElementById('mThumb');
-  th.style.background=c.bg;
-  th.innerHTML=`<span style="font-size:5rem;font-weight:300;color:rgba(0,0,0,0.08)">${c.abbr}</span>`;
+  if(c.image){
+    th.innerHTML=`<img src="${c.image}" alt="${c.brand} ${c.model}" style="width:100%;height:220px;object-fit:cover" onerror="this.parentElement.style.background='${c.bg}';this.remove()">`;
+    th.style.background='transparent';
+  } else {
+    th.style.background=c.bg;
+    th.innerHTML=`<span style="font-size:5rem;font-weight:300;color:rgba(0,0,0,0.08)">${c.abbr}</span>`;
+  }
   document.getElementById('mBody').innerHTML=`
     <div class="modal-specs">
       <div class="mspec"><div class="mspec-l">${T('yearL')}</div><div class="mspec-v">${c.year}</div></div>
-      <div class="mspec"><div class="mspec-l">${T('mileage')}</div><div class="mspec-v">${c.mileage.toLocaleString()} ${T('km')}</div></div>
-      <div class="mspec"><div class="mspec-l">${T('engine')}</div><div class="mspec-v">${c.engine}</div></div>
-      <div class="mspec"><div class="mspec-l">${T('fuel')}</div><div class="mspec-v">${c.fuel}</div></div>
-      <div class="mspec"><div class="mspec-l">${T('trans')}</div><div class="mspec-v">${c.trans}</div></div>
-      <div class="mspec"><div class="mspec-l">${T('drive')}</div><div class="mspec-v">${c.drive}</div></div>
-      <div class="mspec"><div class="mspec-l">${T('color')}</div><div class="mspec-v">${c.color}</div></div>
+      <div class="mspec"><div class="mspec-l">${T('mileage')}</div><div class="mspec-v">${(c.mileage||0).toLocaleString()} ${T('km')}</div></div>
+      <div class="mspec"><div class="mspec-l">${T('engine')}</div><div class="mspec-v">${c.engine||'—'}</div></div>
+      <div class="mspec"><div class="mspec-l">${T('fuel')}</div><div class="mspec-v">${c.fuel||'—'}</div></div>
+      <div class="mspec"><div class="mspec-l">${T('trans')}</div><div class="mspec-v">${c.trans||'—'}</div></div>
+      <div class="mspec"><div class="mspec-l">${T('drive')}</div><div class="mspec-v">${c.drive||'—'}</div></div>
+      <div class="mspec"><div class="mspec-l">${T('color')}</div><div class="mspec-v">${c.color||'—'}</div></div>
       <div class="mspec"><div class="mspec-l">Source</div><div class="mspec-v">${c.src}</div></div>
       <div class="mspec"><div class="mspec-l">Type</div><div class="mspec-v" style="text-transform:capitalize">${c.type}</div></div>
     </div>
+    ${c.desc?`<p style="font-size:0.9rem;line-height:1.7;color:#666;margin-bottom:1.5rem;padding:1rem;background:#f9f9f7;border-left:3px solid rgba(201,168,76,0.4)">${c.desc}</p>`:''}
     <div class="modal-price-row">
       <div><div class="modal-price-lbl">${T('price')}</div><div class="modal-price-val">${fmt(c.krw)}</div></div>
       ${c.encar?`<a href="${c.encar}" target="_blank" class="modal-encar">${T('encarBtn')} ↗</a>`:''}
@@ -905,6 +726,7 @@ function openModal(id){
   document.getElementById('modalOverlay').classList.add('open');
   document.body.style.overflow='hidden';
 }
+
 function closeModal(e){
   if(e&&e.target!==document.getElementById('modalOverlay'))return;
   document.getElementById('modalOverlay').classList.remove('open');
@@ -912,7 +734,6 @@ function closeModal(e){
 }
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
 
-// ══ LANGUAGE ══
 function setLang(l){
   lang=l;
   document.body.style.direction=l==='ar'?'rtl':'ltr';
@@ -921,7 +742,6 @@ function setLang(l){
   applySearch();
 }
 
-// ══ CURRENCY ══
 function setCur(c){
   cur=c;
   document.getElementById('heroPrice').textContent=fmt(95000000);
@@ -930,7 +750,6 @@ function setCur(c){
   applySearch();
 }
 
-// ══ CALCULATOR ══
 function calcPrice(){
   const car=parseInt(document.getElementById('cCar').value);
   const ship=parseInt(document.getElementById('cCountry').value);
@@ -944,7 +763,15 @@ function calcPrice(){
   document.getElementById('rTotal').textContent=fmt(total,c);
 }
 
-// ══ INIT ══
+// ══ localStorage o'zgarishlarini tinglash (admin dan yangilanish) ══
+window.addEventListener('storage', function(e){
+  if(e.key==='pak_cars'){
+    CARS=loadCars();
+    applySearch();
+  }
+});
+
+// INIT
 restoreSearch();
 setLang('en');
 calcPrice();

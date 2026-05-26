@@ -1,3 +1,5 @@
+const CARAPIS_KEY = 'car_qX5K5CpFEeQteqFWhudgftmtexQndmvB3xbiM_nqc2E';
+
 export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
@@ -7,32 +9,36 @@ export default async function handler(req, res) {
     return res.status(200).end();
   }
 
-  const { carid, action, brand, model, year, minprice, maxprice, page = 0 } = req.query;
+  const { action, brand, model, year_from, year_to, page = 1 } = req.query;
 
   try {
     let url;
     const headers = {
-      'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0.0.0 Safari/537.36',
-      'Accept': 'application/json, text/plain, */*',
-      'Accept-Language': 'ko-KR,ko;q=0.9,en;q=0.8',
-      'Referer': 'https://www.encar.com/',
+      'Authorization': `Api-Key ${CARAPIS_KEY}`,
+      'Accept': 'application/json',
     };
 
     if (action === 'search' || action === 'list') {
-      let query = '(And.Hidden.N.';
-      if (brand) query += `_.Manufacturer.${encodeURIComponent(brand)}.`;
-      if (model) query += `_.ModelGroup.${encodeURIComponent(model)}.`;
-      if (year) query += `_.Year.${year}.`;
-      if (minprice) query += `_.Price.${minprice}..`;
-      if (maxprice) query += `..Price.${maxprice}.`;
-      if (!brand && !model) query += '_.PriceCar.3000..'; // min 3000만원 = luxury
-      query += ')';
+      const params = new URLSearchParams({
+        page,
+        page_size: 20,
+        available_only: 'false',
+      });
 
-      const offset = parseInt(page) * 20;
-      url = `https://api.encar.com/search/car/list/general?count=20&q=${query}&sr=%7CModifiedDate%7C${offset}%7C20`;
+      if (brand) params.append('brand_slug', brand.toLowerCase());
+      if (model) params.append('model_slug', model.toLowerCase());
+      if (year_from) params.append('year_from', year_from);
+      if (year_to) params.append('year_to', year_to);
+      if (!brand && !model) params.append('price_from', '30000'); // luxury only $30k+
 
-    } else if (action === 'detail' && carid) {
-      url = `https://api.encar.com/search/car/list/general?count=1&q=(And.Hidden.N._.CarNo.${carid}.)&sr=%7CModifiedDate%7C0%7C1`;
+      url = `https://api.carapis.com/apix/catalog_api/vehicles/?${params.toString()}`;
+
+    } else if (action === 'brands') {
+      url = `https://api.carapis.com/apix/catalog_api/brands/?page_size=100`;
+
+    } else if (action === 'models' && brand) {
+      url = `https://api.carapis.com/apix/catalog_api/models/?brand_slug=${brand.toLowerCase()}&page_size=100`;
+
     } else {
       return res.status(400).json({ error: 'Invalid action' });
     }
@@ -41,10 +47,9 @@ export default async function handler(req, res) {
 
     if (!response.ok) {
       const text = await response.text();
-      return res.status(response.status).json({ 
-        error: `Encar API error: ${response.status}`,
-        url,
-        detail: text.substring(0, 200)
+      return res.status(response.status).json({
+        error: `Carapis API error: ${response.status}`,
+        detail: text.substring(0, 300)
       });
     }
 
